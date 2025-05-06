@@ -95,7 +95,7 @@
 
             <!-- Kategori -->
             <div>
-                <label class="block font-semibold mb-1">Tempat yang Dipilih</label>
+                <label class="block font-semibold mb-1">Kategori yang Dipilih</label>
                 <select name="kategori" class="w-full border border-black px-3 py-2 rounded bg-white">
                     <option value="Bazar">Bazar Preloved - Rp.250.000</option>
                     <option value="Bazar">Bazar Makanan - Rp.300.000</option>

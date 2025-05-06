@@ -12,7 +12,7 @@
 
     <!-- Header -->
     <div class="flex items-center justify-between p-4 border-b-2 border-blue-400 shadow">
-        <a href="{{ url('/') }}" class="flex items-center space-x-2 border border-black px-3 py-1 rounded-md text-black hover:bg-gray-100">
+        <a href="{{ url('/') }}" class="flex items-center space-x-2 border border-black px-3 py-1 rounded-md text-black hover:bg-gray-100">    
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>

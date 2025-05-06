@@ -69,7 +69,7 @@
             </div>
             <div class="flex items-center space-x-2">
                 <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Peralatan <span class="ml-1">▼</span>
+                    Peralatan 
                 </a>
             </div>
         </div>
@@ -190,7 +190,7 @@
                 <img src="https://vinotiliving.com/cdn/shop/products/Costa_dining_chair_new.jpg?v=1645766195"
                     class="h-32 w-full object-cover">
                 <div class="p-4">
-                    <h3 class="font-bold">Kursi</h3>
+                    <h3 class="font-bold">Sound System</h3>
                     <p>Rp xx.xx.xx</p>
                     <p class="text-sm text-gray-500">👤 00 Pax</p>
                 </div>
@@ -201,7 +201,7 @@
                 class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
                 <img src="{{ asset('images/meja.jpg') }}" class="h-32 w-full object-cover">
                 <div class="p-4">
-                    <h3 class="font-bold">Meja</h3>
+                    <h3 class="font-bold">Tenda</h3>
                     <p>Rp xx.xx.xx</p>
                     <p class="text-sm text-gray-500">👤 00 Pax</p>
                 </div>
@@ -235,6 +235,33 @@
                 <img src="{{ asset('images/standbazar.jpg') }}" class="h-32 w-full object-cover">
                 <div class="p-4">
                     <h3 class="font-bold">Stand Bazar</h3>
+                    <p>Rp xx.xx.xx</p>
+                    <p class="text-sm text-gray-500">👤 00 Pax</p>
+                </div>
+            </div>
+            <div
+                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ asset('images/standbazar.jpg') }}" class="h-32 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold">Tripod</h3>
+                    <p>Rp xx.xx.xx</p>
+                    <p class="text-sm text-gray-500">👤 00 Pax</p>
+                </div>
+            </div>
+            <div
+                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ asset('images/standbazar.jpg') }}" class="h-32 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold">Speaker</h3>
+                    <p>Rp xx.xx.xx</p>
+                    <p class="text-sm text-gray-500">👤 00 Pax</p>
+                </div>
+            </div>
+            <div
+                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <img src="{{ asset('images/standbazar.jpg') }}" class="h-32 w-full object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold">Kamera</h3>
                     <p>Rp xx.xx.xx</p>
                     <p class="text-sm text-gray-500">👤 00 Pax</p>
                 </div>
