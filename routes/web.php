@@ -117,6 +117,8 @@ Route::get('/event/festivalbudaya', function () {
     return view('event.festivalbudaya');
 })->name('event.festivalbudaya');
 
-Route::view('/festival1', 'festival1')->name('festival1');
+Route::get('/event/festivalkonser', function () {
+    return view('event.festivalkonser');
+})->name('event.festivalkonser');
 
 Route::view('/festival2', 'festival2')->name('festival2');
