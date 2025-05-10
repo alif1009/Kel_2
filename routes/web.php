@@ -121,4 +121,10 @@ Route::get('/event/festivalkonser', function () {
     return view('event.festivalkonser');
 })->name('event.festivalkonser');
 
-Route::view('/festival2', 'festival2')->name('festival2');
+Route::get('/event/pameranseni', function () {
+    return view('event.pameranseni');
+})->name('event.pameranseni');
+
+Route::get('/event/pameranprojek', function () {
+    return view('event.pameranprojek');
+})->name('event.pameranprojek');

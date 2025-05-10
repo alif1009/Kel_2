@@ -34,8 +34,8 @@
                 <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Informatika</a>
                 <a href="{{ route('event.festivalbudaya') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
                 <a href="{{ route('event.festivalkonser') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
+                <a href="{{ route('event.pameranseni') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
+                <a href="{{ route('event.pameranprojek') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
             </div>
         </div>
 
@@ -108,10 +108,10 @@
 
     <!-- Hero Section -->
     <div class="relative">
-        <img src="{{ asset('images/prelove.png') }}" alt="Bazar Header" class="w-full object-cover h-[400px]">
+        <img src="{{ asset('images/pameran 12.jpg') }}" alt="pameran Header" class="w-full object-cover h-[400px]">
         <div class="absolute top-0 left-0 w-full h-full bg-black/40 flex flex-col justify-center px-8 sm:px-20 text-white">
-            <h1 class="text-5xl font-bold mb-1">Bazar</h1>
-            <h2 class="text-4xl font-light mb-4">Preloved</h2>
+            <h1 class="text-5xl font-bold mb-1">Pameran</h1>
+            <h2 class="text-4xl font-light mb-4">Seni</h2>
             <p class="text-lg mb-2">Available from</p>
             <p class="text-3xl text-yellow-400 font-semibold mb-6">Rp xxx.xxx</p>
             <div class="flex space-x-4">
@@ -124,28 +124,60 @@
         </div>
     </div>
 
-    <!-- Detail Section -->
-    <section class="px-6 sm:px-20 py-12">
-        <div class="bg-white p-8 rounded-xl shadow-md max-w-3xl mx-auto">
-            <h3 class="text-2xl font-bold mb-4">Detail</h3>
-            <p class="text-gray-700 mb-4">
-                Berikut peralatan dan pelayanan yang akan didapatkan dari awal hingga akhir acara bazar:
-            </p>
-            <ul class="list-disc list-inside text-gray-600 space-y-1">
-                <li>Meja & Rak Display</li>
-                <li>Gantungan Baju & Hanger</li>
-                <li>Kursi</li>
-                <li>Tenda atau Kanopi</li>
-                <li>Label Tag</li>
-                <li>Kantong Sampah</li>
-                <li>Cermin berdiri</li>
-                <li>Lampu Tambahan</li>
-                <li>Kasir Portable</li>
-                <li>QR Code</li>
-                <li>Speaker</li>
-                <li>ID Card</li>
-            </ul>
-        </div>
-    </section>
-</div>
+    <section class="relative">
+    
+<!-- Detail Section -->
+<section class="max-w-3xl mx-auto mt-15 px-5">
+  <div class="bg-white rounded-2xl shadow-lg p-10 border border-gray-100">
+    
+    <!-- Header Tab -->
+    <div class="bg-gray-300 rounded-tl-xl px-8 py-2 inline-block mb-5">
+      <h2 class="text-lg font-semibold text-gray-800">Detail</h2>
+    </div>
+    
+    <!-- Description -->
+    <p class="text-gray-600 text-sm mb-4">
+      Berikut Peralatan dan pelayanan yang akan didapatkan dari awal hingga akhir acara pameran :
+    </p>
 
+    <!-- Daftar Item -->
+    <div class="space-y-4 text-sm text-gray-700">
+    <div>
+        <p class="font-semibold text-gray-800">Peralatan Dasar :</p>
+        <ul class="list-disc list-inside text-gray-500">
+          <li>Booth</li>
+          <li>Meja & Kursi</li>
+          <li>Sekat / Partisi Stan</li>
+          <li>Tenda / Kanopi</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-gray-800">Alat Display :</p>
+        <ul class="list-disc list-inside text-gray-500">
+          <li>Rak Display</li>
+          <li>Backdrop / Banner Booth</li>
+          <li>Tv / Layar</li>
+          <li>Standing Banner</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-gray-800">Peralatan Panitia :</p>
+        <ul class="list-disc list-inside text-gray-500">
+          <li>Meja Registrasi & Informasi</li>
+          <li>Laptop & Tablet</li>
+          <li>Printer / Scanner</li>
+          <li>HT</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-gray-800">Perlengkapan Lain :</p>
+        <ul class="list-disc list-inside text-gray-500">
+          <li>Buku Tamu</li>
+          <li>Id Card</li>
+          <li>Tali Lanyard</li>
+          <li>Dekorasi Tambahan</li>
+        </ul>
+      </div>
+
+  </div>
+</section>
