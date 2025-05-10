@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<html lang="id">
     <meta charset="UTF-8">
-    <title>Tabel Pembayaran</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-300 font-serif">
 
-<!-- NAVBAR -->
-<nav class="flex items-center justify-between bg-blue-800 p-4">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    
+<div class="bg-gray-100 min-h-screen">
+ <!-- NAVBAR -->
+ <nav  class="fixed top-0 left-0 w-full z-50 bg-white/0 backdrop-blur-none text-white px-6 py-4 flex justify-between items-center border-b border-white/20">
 
     <!-- Logo sebelah kiri -->
     <div class="flex-1">
-       <a href="/" class="text-lg font-semibold text-white">Logo</a>
+        <a href="/" class="font-bold hover:text-blue-500 text-2xl">Logo</a>
     </div>
 
     <!-- Menu navigasi utama di tengah -->
@@ -29,13 +29,13 @@
             <div x-show="open" @click.away="open = false" x-transition
                 class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
                 <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Preloved</a>
-                <a href="{{ route('event.bazarmakanan') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Makanan</a>
+                <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Makanan</a>
                 <a href="{{ route('event.seminarmentality') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Mentality</a>
                 <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Informatika</a>
-                <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
-                <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
-                <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
-                <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
+                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
+                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
+                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
+                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
             </div>
         </div>
 
@@ -106,53 +106,46 @@
     </div>
 </nav>
 
-
-
-
-
-
-
-
-
-
-    <!-- Tabel -->
-    <div class="p-6">
-        <div class="overflow-x-auto">
-            <table class="table-fixed border-collapse w-full bg-blue shadow-md border border-gray-400">
-                <thead>
-                    <tr class="bg-gray-200 text-left">
-                        <th class="border border-black px-2 py-2 w-10">No</th>
-                        <th class="border border-black px-2 py-2">Nama</th>
-                        <th class="border border-black px-2 py-2">Kategori</th>
-                        <th class="border border-black px-2 py-2">Tempat</th>
-                        <th class="border border-black px-2 py-2">Barang</th>
-                        <th class="border border-black px-2 py-2">Status</th>
-                        <th class="border border-black px-2 py-2">Total</th>
-                        <th class="border border-black px-2 py-2">Tanggal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-black px-2 py-2 text-xl font-bold text-center">1.</td>
-                        <td class="border border-black px-2 py-2">Petra</td>
-                        <td class="border border-black px-2 py-2">Bazar - Preloved</td>
-                        <td class="border border-black px-2 py-2">Auditorium</td>
-                        <td class="border border-black px-2 py-2">Kamera</td>
-                        <td class="border border-black px-2 py-2">Lunas</td>
-                        <td class="border border-black px-2 py-2">Rp.2.00.000</td>
-                        <td class="border border-black px-2 py-2">21/12/2015</td>
-                    </tr>
-                    <!-- Baris tambahan kosong -->
-                    @for ($i = 0; $i < 5; $i++)
-                    <tr>
-                        @for ($j = 0; $j < 8; $j++)
-                        <td class="border border-black px-2 py-6">&nbsp;</td>
-                        @endfor
-                    </tr>
-                    @endfor
-                </tbody>
-            </table>
+    <!-- Hero Section -->
+    <div class="relative">
+        <img src="{{ asset('images/budaya.jpg') }}" alt="Bazar Header" class="w-full object-cover h-[400px]">
+        <div class="absolute top-0 left-0 w-full h-full bg-black/40 flex flex-col justify-center px-8 sm:px-20 text-white">
+            <h1 class="text-5xl font-bold mb-1">Bazar</h1>
+            <h2 class="text-4xl font-light mb-4">Preloved</h2>
+            <p class="text-lg mb-2">Available from</p>
+            <p class="text-3xl text-yellow-400 font-semibold mb-6">Rp xxx.xxx</p>
+            <div class="flex space-x-4">
+                <a href="{{ url('pemesanan') }}" class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">Pesan</a>
+                <a href="https://wa.me/08xxxx" target="_blank"
+                   class="bg-green-500 px-6 py-2 rounded-full text-white hover:bg-green-600 transition">
+                    Chat by Whatsapp
+                </a>
+            </div>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Detail Section -->
+    <section class="px-6 sm:px-20 py-12">
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-3xl mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Detail</h3>
+            <p class="text-gray-700 mb-4">
+                Berikut peralatan dan pelayanan yang akan didapatkan dari awal hingga akhir acara bazar:
+            </p>
+            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li>Meja & Rak Display</li>
+                <li>Gantungan Baju & Hanger</li>
+                <li>Kursi</li>
+                <li>Tenda atau Kanopi</li>
+                <li>Label Tag</li>
+                <li>Kantong Sampah</li>
+                <li>Cermin berdiri</li>
+                <li>Lampu Tambahan</li>
+                <li>Kasir Portable</li>
+                <li>QR Code</li>
+                <li>Speaker</li>
+                <li>ID Card</li>
+            </ul>
+        </div>
+    </section>
+</div>
+

@@ -5,64 +5,87 @@
     <title>Invoice</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-300 font-serif">
+<body class="bg-gray-100 font-serif">
 
     <!-- Header -->
     <div class="bg-gray-300 p-4 shadow-md">
-        <h1 class="text-lg font-bold">Invoice</h1>
+        <h1 class="text-lg font-semibold">Invoice</h1>
     </div>
 
-    <!-- Form Invoice -->
+    <!-- Form Container -->
     <div class="flex justify-center items-center min-h-screen">
-        <form class="bg-white p-6 shadow-md rounded-md w-[400px] space-y-4 border">
+        <form action="/invoice" method="POST" enctype="multipart/form-data"
+              class="bg-gray-300 p-6 rounded-xl shadow-xl w-[370px] space-y-4 border border-gray-400">
+            @csrf
+
+            @if(session('success'))
+                <div class="bg-green-200 text-green-800 text-sm p-2 rounded shadow">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             <!-- Nama -->
             <div>
-                <label class="block font-semibold mb-1">Nama</label>
+                <label class="block text-sm font-bold mb-1">Nama</label>
                 <input type="text" name="nama"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
             </div>
 
             <!-- Kategori -->
             <div>
-                <label class="block font-semibold mb-1">Kategori yang Dipilih</label>
+                <label class="block text-sm font-bold mb-1">Kategori yang Dipilih</label>
                 <input type="text" name="kategori"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
             </div>
 
-            <!-- Peralatan -->
             <div>
-                <label class="block font-semibold mb-1">Peralatan</label>
-                <input type="text" name="peralatan"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                <label class="block text-sm font-bold mb-1">Tempat yang Dipilih</label>
+                <input type="text" name="kategori"
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
             </div>
 
-            <!-- Tempat -->
             <div>
-                <label class="block font-semibold mb-1">Tempat</label>
-                <input type="text" name="tempat"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                <label class="block text-sm font-bold mb-1">Alamat</label>
+                <input type="text" name="kategori"
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-bold mb-1">No hp</label>
+                <input type="text" name="kategori"
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
             </div>
 
             <!-- Total -->
             <div>
-                <label class="block font-semibold mb-1">Total</label>
-                <input type="text" name="total"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                <label class="block text-sm font-bold mb-1">Total</label>
+                <input type="number" name="total"
+                       class="w-full border border-black rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                       required>
             </div>
 
-            <!-- Rekening dan Bukti -->
+            <!-- Rekening -->
+            <div class="text-sm font-bold">
+                Rekening : 109002314589
+            </div>
+
+            <!-- Bukti -->
             <div>
-                <p class="font-semibold mb-1">Rekening : 109002314589</p>
-                <label class="block font-semibold mb-1">Bukti Pembayaran</label>
-                <input type="text" name="bukti"
-                    class="w-full border border-black px-3 py-2 rounded-md bg-gray-100 focus:outline-none">
+                <label class="block text-sm font-bold mb-1">Bukti Pembayaran</label>
+                <input type="file" name="bukti"
+                       class="w-full border border-black rounded px-2 py-1 bg-white"
+                       required>
             </div>
 
-            <!-- Tombol Submit -->
+            <!-- Submit -->
             <div class="flex justify-end">
                 <button type="submit"
-                    class="bg-green-400 hover:bg-green-500 text-white font-semibold px-6 py-2 rounded-full shadow">
+                        class="bg-green-400 hover:bg-green-500 text-white font-semibold px-6 py-2 rounded-full shadow">
                     Submit
                 </button>
             </div>

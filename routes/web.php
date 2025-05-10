@@ -39,26 +39,12 @@ Route::get('/venue/lapangan', function () {
     return view('venue.lapangan');
 })->name('venue.lapangan');
 
-Route::get('/event/bazar', function () {
-    return view('event.bazar');
-})->name('event.bazar');
+//Route::get('/event/bazar', function () {
+    //return view('event.bazar');
+//})->name('event.bazar');
 
 Route::get('/invoice', function () {
     return view('invoice');
-});
-
-Route::post('/invoice', function (Request $request) {
-    $validated = $request->validate([
-        'nama' => 'required',
-        'kategori' => 'required',
-        'total' => 'required|numeric',
-        'bukti' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
-    ]);
-
-    // Simpan file jika ingin
-    $buktiPath = $request->file('bukti')->store('bukti-pembayaran', 'public');
-
-    return back()->with('success', 'Invoice berhasil dikirim!');
 });
 
 Route::get('/pemesanan', function () {
@@ -99,7 +85,38 @@ Route::get('/stock-peralatan', function () {
     return view('stock-peralatan');
 });
 
-Route::get('/katalog-peralatan', function () {
-    return view('katalog-peralatan');
-});
+//Route::get('/katalog-alperalatan', function () {
+    //return view('katog-peralatan');
+//});
 
+Route::view('/peralatan', 'peralatan')->name('peralatan');
+
+Route::view('/seminar', 'seminar')->name('seminar');
+
+Route::view('/seminarmental', 'seminarmental')->name('seminarmental');
+
+//Route::view('/bazar', 'bazar')->name('bazar');
+
+Route::get('/event/bazarpreloved', function () {
+    return view('event.bazarpreloved');
+})->name('event.bazarpreloved');
+
+Route::get('/event/bazarmakanan', function () {
+    return view('event.bazarmakanan');
+})->name('event.bazarmakanan');
+
+Route::get('/event/seminarmentality', function () {
+    return view('event.seminarmentality');
+})->name('event.seminarmentality');
+
+Route::get('/event/seminarinformatika', function () {
+    return view('event.seminarinfromatika');
+})->name('event.seminarinformatika');
+
+Route::get('/event/festivalbudaya', function () {
+    return view('event.festivalbudaya');
+})->name('event.festivalbudaya');
+
+Route::view('/festival1', 'festival1')->name('festival1');
+
+Route::view('/festival2', 'festival2')->name('festival2');

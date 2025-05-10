@@ -40,9 +40,26 @@
 
         <div class="flex-1 flex justify-center space-x-8">
             <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Event Category <span class="ml-1">▼</span>
-                </a>
+                <div x-data="{ open: false }" class="relative flex items-center space-x-2">
+                    <!-- Trigger Dropdown -->
+                    <button @click="open = !open"
+                        class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
+                        Kategori Event<span class="ml-1">▼</span>
+                    </button>
+    
+                    <!-- Dropdown Content -->
+                    <div x-show="open" @click.away="open = false" x-transition
+                        class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
+                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Preloved</a>
+                        <a href="{{ route('event.bazarmakanan') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Makanan</a>
+                        <a href="{{ route('event.seminarmentality') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Mentality</a>
+                        <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Informatika</a>
+                        <a href="{{ route('event.festivalbudaya') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
+                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
+                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
+                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
+                    </div>
+                </div>
             </div>
             <div x-data="{ open: false }" class="relative flex items-center space-x-2">
                 <!-- Trigger Dropdown -->
@@ -63,7 +80,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
+                <a href="{{ route('peralatan') }}" class="flex items-center font-semibold hover:text-blue-500">
                     Peralatan <span class="ml-1">
                 </a>
             </div>

@@ -46,10 +46,10 @@
         <tbody class="bg-gray-300">
           <tr class="h-16">
             <td class="border border-black font-bold text-xl">1.</td>
-            <td class="border border-black">Putri</td>
-            <td class="border border-black">Seminar</td>
-            <td class="border border-black">1</td>
-            <td class="border border-black">Kamera</td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
             <td class="border border-black"></td>
           </tr>
 

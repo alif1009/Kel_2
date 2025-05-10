@@ -47,15 +47,15 @@
         <tbody class="bg-gray-300">
           <tr class="h-16">
             <td class="border border-black font-bold text-xl">1.</td>
-            <td class="border border-black">Putri</td>
-            <td class="border border-black">Seminar</td>
-            <td class="border border-black">1</td>
-            <td class="border border-black">Kamera</td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black">
               <div class="flex justify-center gap-2">
-                <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm">Cancel</button>
-                <button class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">Konfir</button>
+               <!-- <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm"></button>
+                <button class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm"></button>-->
               </div>
             </td>
           </tr>
