@@ -1,319 +1,154 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <meta charset="UTF-8">
+  <title>EventAmaze - Seminar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+  <style>
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    <!-- Link ke Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&display=swap" rel="stylesheet">
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+  }
+</style>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 
-    <!-- Metadata standar -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title halaman -->
-    <title>Landing Page Event</title>
-
-    <!-- Load Tailwind CSS dari CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-900 text-white">
 
-<body class="font-sans">
-    <!-- NAVBAR -->
-    <nav class="flex items-center justify-between bg-gray-100 p-4">
+  <!-- Navbar -->
+  <nav class="bg-black bg-opacity-90 p-4 flex justify-between items-center fixed top-0 w-full z-50">
+    <a href="#" class="text-white font-bold text-xl ml-4">EventAmaze</a>
 
-        <!-- Logo sebelah kiri -->
-        <div class="flex-1">
-            <a href="/" class="font-bold hover:text-blue-500 text-2xl">Logo</a>
-        </div>
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="sm:hidden text-white focus:outline-none mr-4">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
-        <!-- Menu navigasi utama di tengah -->
-        <div class="flex-1 flex justify-center space-x-8">
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open" class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Kategori Event<span class="ml-1">▼</span>
-                </button>
-            
-                <!-- Dropdown Content -->
-                <div
-                    x-show="open"
-                    @click.away="open = false"
-                    x-transition
-                    class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50"
-                >
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar</a>
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar</a>
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival</a>
-                <a href="" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran</a>
-                </div>
-            </div>
+    <!-- Menu Items -->
+    <ul id="nav-menu" class="transition-all duration-300 ease-in-out transform hidden sm:flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 absolute sm:static top-16 left-0 w-full sm:w-auto bg-black sm:bg-transparent text-center sm:text-left py-4 sm:py-0 z-40">
+  <li><a href="#Tentang Kami" class="block px-4 hover:text-blue-400 transition duration-300">Tentang Kami</a></li>
+  <li><a href="#Visi" class="block px-4 hover:text-blue-400 transition duration-300">Visi</a></li>
+  <li><a href="#Misi" class="block px-4 hover:text-blue-400 transition duration-300">Misi</a></li>
+  <li><a href="" class="block px-4 hover:text-blue-400 transition duration-300">Kontak</a></li>
+</ul>
+  </nav>
 
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat <span class="ml-1">▼</span>
-                </button>
+  <!-- Hero Section -->
+  <section class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-center pt-16"
+  style="background-image: url('/images/landing3.jpg');">
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+  <div class="relative z-10">
+    <h2 class="text-white text-xl sm:text-4xl opacity-0 translate-y-4 transition-opacity transition-transform duration-1000 ease-out delay-200 animate-fade-in-up">
+      Tempat Terbaik
+    </h2>
+    <h1 class="text-white text-5xl sm:text-7xl font-bold mt-2 opacity-0 translate-y-4 transition-opacity transition-transform duration-1000 ease-out delay-500 animate-fade-in-up">
+      Konferensi<br>Seminar
+    </h1>
+    <div class="mt-6 flex space-x-4 justify-center">
+      <a href="{{ route('register') }}" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded text-white font-semibold transition duration-300 ease-in-out">Register</a>
+      <a href="{{ route('login') }}" class="bg-gray-800 hover:bg-gray-700 px-5 py-2 rounded text-white font-semibold transition duration-300 ease-in-out">Login</a>
+    </div>
+  </div>
+</section>
 
-                <!-- Dropdown Content -->
-                <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                    <a href="{{ route('venue.auditorium') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Auditorium</a>
-                    <a href="{{ route('venue.gedungtekno') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Gedung Tekno</a>
-                    <a href="{{ route('venue.lapangan') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Lapangan</a>
-                </div>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Peralatan 
-                </a>
-            </div>
-        </div>
 
-        <!-- Tombol Register dan Login di kanan -->
-        <div class="flex-1 flex justify-end space-x-4">
-            <a href="{{ route('register') }}">
-                <button class="border rounded-lg px-4 py-1 font-semibold hover:bg-gray-200">Register</button>
-            </a>
-            <a href="{{ route('login') }}">
-                <button class="bg-black text-white rounded-lg px-4 py-1 font-semibold hover:bg-gray-700">Login</button>
-            </a>
-        </div>
-    </nav>
+  <!-- Seminar Planners -->
+  <section id="Tentang Kami" class="bg-blue-900 py-12 px-4 sm:px-8 md:px-16 text-white text-left">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-6">
+      <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  <img src="/images/landing1.jpg" class="rounded shadow-lg transform hover:scale-105 transition duration-500">
+  <img src="/images/landing4.jpg" class="rounded shadow-lg transform hover:scale-105 transition duration-500">
+  <img src="/images/landing5.jpg" class="rounded shadow-lg transform hover:scale-105 transition duration-500">
+</div>
+      <div class="flex-1 mt-4">
+        <h3 class="text-3xl font-bold mb-2">Tentang Kami</h3>
+        <h2 class="text-xl font-extrabold mb-4">SEMINAR PLANNERS</h2>
+        <p>
+          EventAmaze adalah salah satu event organizer terbaik yang ada di sini. Kami bisa membuktikannya dengan memberikan ide dan solusi yang baik untuk membantu kostumer membuat event seminar yang ingin dibuat untuk di kampus.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- HERO SECTION -->
-    <section class="relative">
-        <!-- Gambar latar belakang -->
-        <img src="https://idebiz.id/wp-content/uploads/2024/01/Event-Organizer-Handal-Pelatihan-Utama-untuk-Kesuksesan.jpg"
-            alt="Hero Image" class="w-full h-[600px] object-cover">
+  <!-- Visi Section -->
+  <section id="Visi" class="min-h-[500px] bg-cover bg-center text-left flex items-start justify-start" style="background-image: url('/images/Frame3.png');">
+    <div class="p-8 sm:p-12 text-white max-w-4xl">
+      <h2 class="text-3xl font-bold mb-4">Visi</h2>
+      <p class="text-lg sm:text-xl md:text-xl lg:text-2xl">
+        Menjadi event organizer terdepan dalam penyelenggaraan seminar edukatif, inspiratif, dan berkualitas yang memberikan dampak positif bagi masyarakat dan dunia profesional.
+      </p>
+    </div>
+  </section>
 
-        <!-- Teks di atas gambar -->
-        <div class="absolute top-20 left-10 text-white">
-            <h1 class="text-5xl font-bold mb-2">Hidup Adalah Sebuah Peristiwa</h1>
-            <p class="text-2xl">Jadikan Peristiwa Anda Istimewa Bersama Kami</p>
-        </div>
-    </section>
+  <!-- Misi Section -->
+  <section id="Misi" class="min-h-[500px] bg-cover bg-center flex items-center justify-end px-6 md:px-20 text-white" style="background-image: url('/images/Frame2.png');">
+    <div class="max-w-3xl w-full">
+      <h2 class="text-4xl font-bold mb-6 text-right">Misi</h2>
+      <ol class="list-decimal list-outside pl-5 space-y-4 text-justify text-lg">
+        <li>Menyelenggarakan seminar-seminar yang relevan dengan kebutuhan zaman dan perkembangan industri.</li>
+        <li>Menjalin kerja sama dengan narasumber, institusi, dan sponsor yang kredibel dan berkompeten.</li>
+        <li>Memberikan pengalaman seminar yang profesional, informatif, dan bernilai bagi seluruh peserta.</li>
+        <li>Mengadopsi teknologi dan inovasi terbaru dalam pelaksanaan event untuk meningkatkan efektivitas dan kenyamanan.</li>
+        <li>Membangun komunitas pembelajar dan profesional melalui kegiatan seminar yang berkelanjutan.</li>
+      </ol>
+    </div>
+  </section>
 
-    <!-- KATEGORI EVENT -->
-    <section class="flex p-10 space-x-10">
-        <!-- Gambar kategori -->
-        <div class="w-1/2">
-            <img src="https://idebiz.id/wp-content/uploads/2023/08/Tingkatkan-Kemampuan-EO-Anda.jpg" alt="Kategori"
-                class="rounded-xl shadow-lg">
-        </div>
+  <!-- Memory Section -->
+  <section class="min-h-[500px] bg-cover bg-center text-center flex items-center justify-center relative" style="background-image: url('/images/Frame1.png');">
+    <div class="absolute inset-0"></div>
+    <div class="relative z-10 p-4 sm:p-8">
+      <h2 class="text-4xl sm:text-5xl font-bold">Buat Memori Terindah<br>Dengan Membuat Event Seminar</h2>
+    </div>
+  </section>
 
-        <!-- Deskripsi kategori -->
-        <div class="w-1/2">
-            <h2 class="text-2xl font-medium mb-4" style="font-family: 'Abhaya Libre', serif;"></h2>
-            <h2 class="text-6xl font-bold mb-4" style="font-family: 'Abhaya Libre', serif;">Kategori Event</h2>
-            <p class="mb-6 text-4xl" style="font-family: 'Abhaya Libre', serif;">
-                Kami menyediakan beberapa kategori event seperti:
-            </p>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 px-4 text-center">
+    <h3 class="text-lg font-bold mb-2">EventAmaze</h3>
+    <div class="flex justify-center space-x-4 mb-2">
+      <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/twitter.png" /></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/facebook-new.png" /></a>
+    </div>
+    <p class="text-sm">&copy; 2025 Your Website. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
 
-            <!-- List kategori -->
-            <ul class="list-decimal list-inside space-y-3 text-3xl" style="font-family: 'Abhaya Libre', serif;">
-                <li>Seminar</li>
-                <li>Bazar</li>
-                <li>Festival</li>
-                <li>Pameran</li>
-            </ul>
-        </div>
-    </section>
+  <!-- Script for navbar toggle -->
+ <script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-    <!-- TEMPAT EVENT -->
-    <section class="bg-blue-900 text-white py-12">
-        <!-- Judul -->
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">TEMPAT</h2>
-            <p class="text-yellow-300">Cari Tempat Terbaik Untuk Event Kamu!</p>
-        </div>
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+    navMenu.classList.toggle('opacity-0');
+    navMenu.classList.toggle('opacity-100');
+    navMenu.classList.toggle('translate-y-[-10px]');
+    navMenu.classList.toggle('translate-y-0');
+  });
+</script>
 
-        <!-- Daftar tempat -->
-        <div class="flex justify-center space-x-8">
-            <!-- Card tempat 1 -->
-            <div
-                class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="{{ asset('images/auditorium-bg.jpg') }}"
-                    class="h-40 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Auditorium</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">Politeknik Negeri Batam</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card tempat 2 -->
-            <div
-                class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8WszpmULhcyz58iT-Pe1ZX0BCZxX8N4Z2VJ-0vzjYO0HNG7yUUe4_ZindpE4KchAOAB_5QkNsc4kks7riIKNZFLf-ZIiWQ2SymyFfrz5tZpgeSacS-Y0ncuKdR3O2d1gOszUPc=s1360-w1360-h1020-rw"
-                    class="h-40 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Gedung Tekno</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">Politeknik Negeri Batam</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card tempat 3 -->
-            <div
-                class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="https://www.polibatam.ac.id/wp-content/uploads/2023/05/Hardiknas-2023.jpg"
-                    class="h-40 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Lapangan</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">Politeknik Negeri Batam</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PERALATAN EVENT -->
-    <section class="bg-gradient-to-r from-gray-300 to-gray-100 py-12">
-        <!-- Judul -->
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold">PERALATAN</h2>
-        </div>
-
-        <!-- Container scroll horizontal -->
-        <div class="flex space-x-6 overflow-x-auto scroll-smooth px-10">
-            <!-- Card peralatan 1 -->
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/soundsistem.jpg') }}"
-                    class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Sound System</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card peralatan 2 -->
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/tenda.jpeg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Tenda</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card peralatan 3 -->
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/lampu.jpg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Lighting</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card peralatan 4 -->
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/panggung.jpg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Panggung</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-
-            <!-- Card peralatan 5 -->
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/standbazar.jpg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Stand Bazar</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/tripod.jpg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Tripod</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/speaker.png') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Speaker</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-            <div
-                class="flex-shrink-0 bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-                <img src="{{ asset('images/kamera.jpg') }}" class="h-32 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold">Kamera</h3>
-                    <p>Rp xx.xx.xx</p>
-                    <p class="text-sm text-gray-500">👤 00 Pax</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <!-- FOOTER -->
-    <footer class="bg-black text-white py-8">
-        <div class="flex justify-center space-x-6 mb-4">
-            <!-- Ikon sosial media -->
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
-                    class="w-6 h-6"></a>
-        </div>
-
-        <!-- Hak cipta dan link tambahan -->
-        <div class="text-center text-gray-400 text-sm">
-            2024 Your Website. All rights reserved.
-            <span class="px-2">|</span>
-            <a href="#" class="hover:text-white">Privacy Policy</a>
-            <span class="px-2">|</span>
-            <a href="#" class="hover:text-white">Terms of Service</a>
-        </div>
-    </footer>
-
-    <!-- SCRIPT: Animasi fade-in saat scroll -->
-    <script>
-        const faders = document.querySelectorAll('.fade-in');
-
-        const appearOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.remove('opacity-0', 'translate-y-5');
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                observer.unobserve(entry.target);
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-    </script>
 </body>
-
 </html>

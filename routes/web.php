@@ -6,13 +6,32 @@ use App\Http\Controllers\registerController;
 //Route::get('/', function () {
 //return view('welcome');
 //});
+Route::get('/berandaPTN', function () {
+    return view('berandaPTN');
+})->name('berandaPTN');
+
+
+Route::get('/seminarPTN', function () {
+    return view('seminarPTN');
+})->name('seminarPTN');
+
+Route::get('/formjadiPTN', function () {
+    return view('formjadiPTN');
+})->name('formjadiPTN');
+
+
+Route::get('/jadiPTN', function () {
+    return view('jadiPTN');
+})->name('jadiPTN');
+
 Route::get('/', function () {
     return view('landing');
 });
 
 Route::get('/beranda', function () {
     return view('beranda');
-});
+})->name('beranda');
+
 
 
 Route::get('/register', function () {
@@ -27,6 +46,14 @@ Route::get('/profile/profil', function () {
     return view('profile.profil');
 })->name('profile.profil');
 
+Route::get('/profile/profilADM', function () {
+    return view('profile.profilADM');
+})->name('profile.profilADM');
+
+Route::get('/profile/profilPTN', function () {
+    return view('profile.profilPTN');
+})->name('profile.profilPTN');
+
 Route::get('/venue/auditorium', function () {
     return view('venue.auditorium');
 })->name('venue.auditorium');
@@ -35,9 +62,6 @@ Route::get('/venue/gedungtekno', function () {
     return view('venue.gedungtekno');
 })->name('venue.gedungtekno');
 
-Route::get('/venue/lapangan', function () {
-    return view('venue.lapangan');
-})->name('venue.lapangan');
 
 //Route::get('/event/bazar', function () {
     //return view('event.bazar');
@@ -63,68 +87,68 @@ Route::post('/pemesanan', function (Request $request) {
     return back()->with('success', 'Pemesanan berhasil dikirim!');
 });
 
-Route::get('/list-orderan', function () {
-    $orders = [
+Route::get('/konfirmasiacara', function () {
+    $acara = [
         ['nama' => 'Alya', 'kategori' => 'Bazar', 'total' => 'Rp200.000', 'status' => 'Belum Bayar'],
         ['nama' => 'Budi', 'kategori' => 'Seminar', 'total' => 'Rp150.000', 'status' => 'Sudah Bayar'],
         // Tambah data dummy lainnya jika perlu
     ];
     
-    return view('list-orderan', compact('orders'));
+    return view('konfirmasiacara', compact('acara'));
 });
 
-Route::get('/orderan-selesai', function () {
-    return view('orderan-selesai');
+Route::get('/seminarselesai', function () {
+    return view('seminarselesai');
 });
 
 Route::get('/tabel-invoice', function () {
     return view('tabel-invoice');
 });
 
-Route::get('/stock-peralatan', function () {
-    return view('stock-peralatan');
+Route::get('/dashboardcard', function () {
+    return view('dashboardcard');
 });
 
 //Route::get('/katalog-alperalatan', function () {
     //return view('katog-peralatan');
 //});
 
-Route::view('/peralatan', 'peralatan')->name('peralatan');
+//Route::view('/peralatan', 'peralatan')->name('peralatan');
 
-Route::view('/seminar', 'seminar')->name('seminar');
+//Route::view('/seminar', 'seminar')->name('seminar');
 
-Route::view('/seminarmental', 'seminarmental')->name('seminarmental');
+//Route::view('/seminarmental', 'seminarmental')->name('seminarmental');
 
 //Route::view('/bazar', 'bazar')->name('bazar');
 
-Route::get('/event/bazarpreloved', function () {
-    return view('event.bazarpreloved');
-})->name('event.bazarpreloved');
+//Route::get('/event/bazarpreloved', function () {
+   // return view('event.bazarpreloved');
+//})->name('event.bazarpreloved');
 
-Route::get('/event/bazarmakanan', function () {
-    return view('event.bazarmakanan');
-})->name('event.bazarmakanan');
+//Route::get('/event/bazarmakanan', function () {
+  //  return view('event.bazarmakanan');
+//})->name('event.bazarmakanan');
 
-Route::get('/event/seminarmentality', function () {
-    return view('event.seminarmentality');
-})->name('event.seminarmentality');
+//Route::get('/event/seminarmentality', function () {
+  //  return view('event.seminarmentality');
+//})->name('event.seminarmentality');
 
-Route::get('/event/seminarinformatika', function () {
-    return view('event.seminarinfromatika');
-})->name('event.seminarinformatika');
+//Route::get('/event/seminarinformatika', function () {
+  //  return view('event.seminarinfromatika');
+//})->name('event.seminarinformatika');
 
-Route::get('/event/festivalbudaya', function () {
-    return view('event.festivalbudaya');
-})->name('event.festivalbudaya');
+//Route::get('/event/festivalbudaya', function () {
+  //  return view('event.festivalbudaya');
+//})->name('event.festivalbudaya');
 
-Route::get('/event/festivalkonser', function () {
-    return view('event.festivalkonser');
-})->name('event.festivalkonser');
+//Route::get('/event/festivalkonser', function () {
+  //  return view('event.festivalkonser');
+//})->name('event.festivalkonser');
 
-Route::get('/event/pameranseni', function () {
-    return view('event.pameranseni');
-})->name('event.pameranseni');
+//Route::get('/event/pameranseni', function () {
+  //  return view('event.pameranseni');
+//})->name('event.pameranseni');
 
-Route::get('/event/pameranprojek', function () {
-    return view('event.pameranprojek');
-})->name('event.pameranprojek');
+//Route::get('/event/pameranprojek', function () {
+  //  return view('event.pameranprojek');
+//})->name('event.pameranprojek');

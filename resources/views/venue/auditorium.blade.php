@@ -30,100 +30,58 @@
 <body class="bg-black text-white">
 
     <!-- Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 bg-white/0 backdrop-blur-none text-white px-6 py-4 flex justify-between items-center border-b border-white/20">
-        <!-- Logo di kiri -->
-        <div class="flex-1">
-            <a href="/" class="font-bold hover:text-blue-500 text-2xl">Logo</a>
-        </div>
+    <header class="flex justify-between items-center px-6 py-4">
+        <h1 class="text-xl font-bold">EventAmaze</h1>
+        <nav class="space-x-6 font-semibold flex items-center">
+           <a href="{{ route('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
 
-        <div class="flex-1 flex justify-center space-x-8">
-            <div class="flex items-center space-x-2">
-                <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                    <!-- Trigger Dropdown -->
-                    <button @click="open = !open"
-                        class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                        Kategori Event<span class="ml-1">▼</span>
-                    </button>
-    
-                    <!-- Dropdown Content -->
-                    <div x-show="open" @click.away="open = false" x-transition
-                        class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Preloved</a>
-                        <a href="{{ route('event.bazarmakanan') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Makanan</a>
-                        <a href="{{ route('event.seminarmentality') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Mentality</a>
-                        <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Informatika</a>
-                        <a href="{{ route('event.festivalbudaya') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
-                        <a href="{{ route('event.festivalkonser') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
-                        <a href="{{ route('event.pameranseni') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
-                        <a href="{{ route('event.pameranprojek') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
+            <!-- Dropdown untuk Tempat -->
+            <div x-data="{ open: false }" class="relative inline-block text-left">
+                <button @click="open = !open" class="hover:underline flex items-center space-x-1">
+                    <span>Tempat</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="open" @click.away="open = false" x-transition
+                    class="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                    <div class="py-1 text-black">
+                        <a href="{{ route('venue.gedungtekno') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-100">Gedung Tekno</a>
+                        <a href="{{ route('venue.auditorium') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-100">Auditorium</a>
                     </div>
                 </div>
             </div>
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat <span class="ml-1">▼</span>
-                </button>
 
-                <!-- Dropdown Content -->
-                <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                    <a href="{{ route('venue.auditorium') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Auditorium</a>
-                    <a href="{{ route('venue.gedungtekno') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Gedung Tekno</a>
-                    <a href="{{ route('venue.lapangan') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Lapangan</a>
-                </div>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="{{ route('peralatan') }}" class="flex items-center font-semibold hover:text-blue-500">
-                    Peralatan <!--<span class="ml-1">▼</span>-->
-                </a>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Riwayat pemesanan <!--<span class="ml-1">▼</span>-->
-                </a>
+           <a href="{{ route('seminarPTN') }}" class="hover:underline">Seminar</a>
+
+        </nav>
+
+        <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open"
+                class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Profile(Panitia)</span>
+            </button>
+            <!-- Dropdown Menu -->
+            <div x-show="open" @click.away="open = false" x-transition
+                class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+                <a href="{{ route('profile.profil') }}"
+                    class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
+                <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
+                <form method="POST" action="#">
+                    @csrf
+                    <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log
+                        out</button>
+                </form>
             </div>
         </div>
-        
-        <div class="flex-1 flex justify-end space-x-4"></div>
-            <!-- Search Bar -->
-  <!--  <form action="#" method="GET" class="relative">
-       <input type="text" name="query" placeholder="Search...." 
-              class="border border-gray-300 rounded-lg py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-       <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">
-           🔍
-       </button>
-   </form>-->
-<!-- Profil kanan -->
-   <div x-data="{ open: false }" class="relative">
-    <button @click="open = !open"
-        class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        <span>Profile(Mahasiswa)</span>
-    </button>
-    <!-- Dropdown Menu -->
-<div x-show="open" @click.away="open = false" x-transition
-class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-<a href="{{ route('profile.profil') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-<a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
-<form method="POST" action="#">
-    @csrf
-    <button type="submit"
-        class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
-</form>
-</div>
-
-        <!-- Placeholder kanan -->
-        <div class="w-1/3"></div>
     </header>
 
     <!-- Hero Section -->
@@ -135,19 +93,8 @@ class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
             <!-- Keterangan Auditorium -->
             <div class="text-white max-w-2xl py-10">
                 <h1 class="text-5xl font-bold mb-4">Auditorium</h1>
-                <div class="text-yellow-500 text-2xl font-semibold mb-2 flex items-center gap-2">
-                    Rp xxx.xxx
-                    <span class="text-white flex items-center ml-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>9999 Pax
-                    </span>
-                </div>
                 <p class="mb-1">Polteknik Negeri Batam</p>
                 <p class="mb-4">Batam, Kepulaun 29439</p>
-                <p class="text-yellow-300 mb-6">Tersedia penawaran khusus untuk 50, 100, 200 Pax.<br>Kontak tim kami
-                    untuk info lebih lanjut.</p>
 
                 <!-- Tombol -->
                 <div class="flex gap-4">
@@ -170,10 +117,58 @@ class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
                 <img src="https://www.polibatam.ac.id/wp-content/uploads/2022/08/Inagurasi-MABA-2022-scaled.jpg"
                     class="rounded-2xl w-full h-36 object-cover transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-fade-in-up delay-300">
             </div>
-
-
         </div>
     </section>
+    <!-- Section Detail -->
+<section class="bg-white text-gray-700 px-6 py-10">
+    <div class="max-w-4xl mx-auto bg-gray-50 p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-300 pb-2">Detail</h2>
+        <p class="mb-4">Berikut Peralatan dan pelayanan yang akan didapatkan dari awal hingga akhir acara seminar:</p>
+
+        <div class="space-y-6">
+            <div>
+                <h3 class="font-semibold mb-1">Alat Presentasi:</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Laptop/Komputer</li>
+                    <li>Proyektor + Layar Proyektor</li>
+                    <li>Pointer</li>
+                    <li>Kabel Koneksi</li>
+                    <li>Remote Presentasi</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-1">Alat Dokumentasi:</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Kamera</li>
+                    <li>Tripod</li>
+                    <li>Microphone Eksternal</li>
+                    <li>Buku Tamu</li>
+                    <li>Alat Pencatat</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-1">Perlengkapan Meja Panitia & Registrasi:</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Meja & Kursi Panitia</li>
+                    <li>ID Card</li>
+                    <li>Map / Folder Materi Seminar</li>
+                    <li>Formulis Registrasi</li>
+                    <li>Snack Box</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-1">Peserta:</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>SnackBox</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </body>
 

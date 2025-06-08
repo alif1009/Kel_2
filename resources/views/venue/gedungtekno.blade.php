@@ -31,107 +31,65 @@
 <body class="bg-black text-white">
 
     <!-- Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 bg-white/0 backdrop-blur-none text-white px-6 py-4 flex justify-between items-center border-b border-white/20">
-        <!-- Logo di kiri -->
-        <div class="flex-1">
-            <a href="/" class="font-bold hover:text-blue-500 text-2xl">Logo</a>
-        </div>
+<header class="flex justify-between items-center px-6 py-4">
+        <h1 class="text-xl font-bold">EventAmaze</h1>
+        <nav class="space-x-6 font-semibold flex items-center">
+            <a href="{{ route('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
 
-        <div class="flex-1 flex justify-center space-x-8">
-            <div class="flex items-center space-x-2">
-                <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                    <!-- Trigger Dropdown -->
-                    <button @click="open = !open"
-                        class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                        Kategori Event<span class="ml-1">▼</span>
-                    </button>
-    
-                    <!-- Dropdown Content -->
-                    <div x-show="open" @click.away="open = false" x-transition
-                        class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                        <a href="{{ route('event.bazarpreloved') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Preloved</a>
-                        <a href="{{ route('event.bazarmakanan') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Bazar Makanan</a>
-                        <a href="{{ route('event.seminarmentality') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Mentality</a>
-                        <a href="{{ route('event.seminarinformatika') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Seminar Informatika</a>
-                        <a href="{{ route('event.festivalbudaya') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Budaya</a>
-                        <a href="{{ route('event.festivalkonser') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Festival Konser</a>
-                        <a href="{{ route('event.pameranseni') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Seni</a>
-                        <a href="{{ route('event.pameranprojek') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pameran Projek</a>
+
+            <!-- Dropdown untuk Tempat -->
+            <div x-data="{ open: false }" class="relative inline-block text-left">
+                <button @click="open = !open" class="hover:underline flex items-center space-x-1">
+                    <span>Tempat</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="open" @click.away="open = false" x-transition
+                    class="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                    <div class="py-1 text-black">
+                        <a href="{{ route('venue.gedungtekno') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-100">Gedung Tekno</a>
+                        <a href="{{ route('venue.auditorium') }}"
+                            class="block px-4 py-2 text-sm hover:bg-gray-100">Auditorium</a>
                     </div>
                 </div>
             </div>
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat <span class="ml-1">▼</span>
-                </button>
 
-                <!-- Dropdown Content -->
-                <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute top-full mt-2 bg-white border rounded-md shadow-lg w-48 z-50">
-                    <a href="{{ route('venue.auditorium') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Auditorium</a>
-                    <a href="{{ route('venue.gedungtekno') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Gedung Tekno</a>
-                    <a href="{{ route('venue.lapangan') }}"
-                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Lapangan</a>
-                </div>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="{{ route('peralatan') }}" class="flex items-center font-semibold hover:text-blue-500">
-                    Peralatan <span class="ml-1">
-                </a>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Peralatan <!--<span class="ml-1">▼</span>-->
-                </a>
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="#" class="flex items-center font-semibold hover:text-blue-500">
-                    Riwayat pemesanan <!--<span class="ml-1">▼</span>-->
-                </a>
+            <a href="{{ route('seminarPTN') }}" class="hover:underline">Seminar</a>
+        </nav>
+
+        <div x-data="{ open: false }" class="relative">
+            <button @click="open = !open"
+                class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Profile(Panitia)</span>
+            </button>
+            <!-- Dropdown Menu -->
+            <div x-show="open" @click.away="open = false" x-transition
+                class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+                <a href="{{ route('profile.profil') }}"
+                    class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
+                <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
+                <form method="POST" action="#">
+                    @csrf
+                    <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log
+                        out</button>
+                </form>
             </div>
         </div>
-
-
-        <div class="flex-1 flex justify-end space-x-4">
-<!-- Profil kanan -->
-<div x-data="{ open: false }" class="relative">
-    <button @click="open = !open"
-        class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        <span>Profile(Mahasiswa)</span>
-    </button>
-    <!-- Dropdown Menu -->
-<div x-show="open" @click.away="open = false" x-transition
-class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-<a href="{{ route('profile.profil') }}" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-<a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
-<form method="POST" action="#">
-    @csrf
-    <button type="submit"
-        class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
-</form>
-</div>
-
-        
-
-        <!-- Placeholder kanan -->
-        <div class="w-1/3"></div>
     </header>
 
 
 
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center min-h-[90vh] flex items-center"
-        style="background-image: url('{{ asset('images/tekno-bg.jpg') }}');">
+        style="background-image: url('{{ asset('images/tekno-bg.jpg') }}')">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         <div class="relative z-10 flex flex-col md:flex-row justify-between w-full px-10 py-10">
 
@@ -164,19 +122,69 @@ class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
 
             <!-- Galeri Gambar -->
             <div class="grid grid-cols-2 gap-2 mt-10 md:mt-0 md:ml-10 max-w-md">
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqjfprIdrqEBz6omMpfpeYahA_BKcnOCQNNK2IfGpYfq455iCUV3Y6LgcFFPm9YtKDe2gQzBCSGQL1KT6nJ3-4yUqwSepPfQdtSc_qITe7i73i-HvwHdEhJWzQA4Cuuv7rQPzLU=s1360-w1360-h1020-rw"
+                <img src="{{ asset('images/dalamtekno.jpg') }}"
                     class="rounded-2xl w-90 h-auto object-cover col-span-2 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-fade-in-up delay-100">
 
-                <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrYtaSdrXX3Zz7lzAlzAyKKtXkeK7LY_k7yaweF53ztCXbdyMY00meF5yEgcmUXUR8I_zaLvJPYxsH9qpWoe1OVaAm7OGwJkiJ91KAeU-4r0xFbNEWFwe02v4vwwp0cFTGnvkU=s1360-w1360-h1020-rw"
+                <img src="{{ asset('images/dalamtekno2.jpg') }}"
                     class="rounded-2xl w-full h-36 object-cover transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-fade-in-up delay-200">
 
                 <img src="https://www.polibatam.ac.id/wp-content/uploads/2022/06/Technopreneur-Centre-Polibatam-1-1536x1024.jpg"
                     class="rounded-2xl w-full h-36 object-cover transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl opacity-0 animate-fade-in-up delay-300">
             </div>
-
-
         </div>
     </section>
+<!-- Detail Section -->
+<section class="bg-white text-gray-800 py-10 px-6 md:px-20">
+    <div class="bg-white rounded-2xl shadow-lg border border-gray-300 p-6 md:p-10 max-w-4xl mx-auto">
+        <div class="border-b-2 border-gray-200 pb-2 mb-4">
+            <span class="bg-gray-200 px-4 py-1 rounded-t-lg text-lg font-semibold">Detail</span>
+        </div>
+        <p class="mb-4 text-sm text-gray-700">Berikut Peralatan dan pelayanan yang akan didapatkan dari awal hingga akhir acara seminar :</p>
+
+        <div class="space-y-4 text-sm text-gray-700">
+            <div>
+                <strong>Alat Presentasi :</strong>
+                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
+                    <li>Laptop/Komputer</li>
+                    <li>Proyektor + Layar Proyektor</li>
+                    <li>Pointer</li>
+                    <li>Kabel Koneksi</li>
+                    <li>Remote Presentasi</li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>Alat Dokumentasi :</strong>
+                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
+                    <li>Kamera</li>
+                    <li>Tripod</li>
+                    <li>Microphone Eksternal</li>
+                    <li>Buku Tamu</li>
+                    <li>Alat Pencatat</li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>Perlengkapan Meja Panitia & Registrasi :</strong>
+                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
+                    <li>Meja & Kursi Panitia</li>
+                    <li>ID Card</li>
+                    <li>Map / Folder Materi Seminar</li>
+                    <li>Formulir Registrasi</li>
+                    <li>Snack Box</li>
+                </ul>
+            </div>
+
+            <div>
+                <strong>Peserta :</strong>
+                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
+                    <li>Snack Box</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </body>
 

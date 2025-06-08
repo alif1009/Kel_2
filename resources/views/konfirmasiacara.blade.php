@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>List Orderan</title>
+  <title>Konfirmasi Acara</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex min-h-screen bg-gray-100 font-sans">
@@ -12,35 +12,36 @@
     <div class="text-2xl font-semibold p-5 border-b border-white">Logo</div>
 
     <nav class="flex-1 px-2 py-4 space-y-2">
-      <a href="{{ url('stock-peralatan') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
+      <a href="{{ url('dashboardcard') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/home.png" alt="icon" class="w-6 h-6" />
         Dashboard
       </a>
       <a href="{{ url('list-orderan') }}" class="flex items-center gap-3 px-4 py-2 bg-[#f5c16c] text-black rounded-r-full font-semibold">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/to-do.png" class="w-6 h-6" alt="icon" />
-        List Orderan
+        Konfirmasi Acara
       </a>
-      <a href="{{ url('orderan-selesai') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
+      <a href="{{ url('seminarselesai') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/checked.png" class="w-6 h-6" alt="icon" />
-        Orderan Selesai
+        Seminar Selesai
       </a>
     </nav>
   </aside>
 
   <!-- Main Content -->
   <main class="flex-1 p-8">
-    <h1 class="text-2xl font-bold mb-4">Orderan Costumer</h1>
+    <h1 class="text-2xl font-bold mb-4">Konfirmasi Acara</h1>
 
     <div class="bg-gray-300 p-4 rounded shadow">
       <table class="w-full table-auto border-collapse border border-black text-center text-lg">
         <thead class="bg-gray-400">
           <tr>
             <th class="border border-black px-2 py-2">No</th>
-            <th class="border border-black px-2 py-2">Nama</th>
-            <th class="border border-black px-2 py-2">Kategori yg dipilih</th>
-            <th class="border border-black px-2 py-2">Tempat</th>
-            <th class="border border-black px-2 py-2">Peralatan</th>
-            <th class="border border-black px-2 py-2">Status Pembayaran</th>
+            <th class="border border-black px-2 py-2">ID</th>
+            <th class="border border-black px-2 py-2">Nama Lengkap</th>
+            <th class="border border-black px-2 py-2">Juduk Acara</th>
+            <th class="border border-black px-2 py-2">Rundown</th>
+            <th class="border border-black px-2 py-2">Poster</th>
+            <th class="border border-black px-2 py-2">Surat Izin</th>
             <th class="border border-black px-2 py-2">Aksi</th>
           </tr>
         </thead>
@@ -52,10 +53,11 @@
             <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>
+            <td class="border border-black"></td>
             <td class="border border-black">
               <div class="flex justify-center gap-2">
-               <!-- <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm"></button>
-                <button class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm"></button>-->
+                <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm">Tolak</button>
+                <button class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">Konfirmasi</button>
               </div>
             </td>
           </tr>
@@ -64,6 +66,7 @@
           @for ($i = 0; $i < 4; $i++)
           <tr class="h-16">
             <td class="border border-black">&nbsp;</td>
+            <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>

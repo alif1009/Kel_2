@@ -54,7 +54,8 @@
                 <select name="role" required
                     class="px-4 py-2 rounded border text-black bg-white/15 placeholder-gray-600">
                     <option value="" disabled selected>Pilih Login Sebagai</option>
-                    <option value="customer">Customer (Mahasiswa)</option>
+                    <option value="mahasiswa">Mahasiswa</option>
+                     <option value="panitia">Panitia</option>
                     <option value="admin">Admin</option>
                 </select>
 
