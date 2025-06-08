@@ -35,7 +35,7 @@
 
         <!-- Logo sebelah kiri -->
         <div class="flex-1">
-            <a href="/" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
+            <a href="/beranda" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
         </div>
 
         <!-- Menu navigasi utama di tengah -->

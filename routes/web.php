@@ -15,9 +15,13 @@ Route::get('/seminarPTN', function () {
     return view('seminarPTN');
 })->name('seminarPTN');
 
-Route::get('/formjadiPTN', function () {
-    return view('formjadiPTN');
-})->name('formjadiPTN');
+Route::get('/bikinseminar', function () {
+    return view('bikinseminar');
+})->name('bikinseminar');
+
+Route::get('/pengajuanPTN', function () {
+    return view('pengajuanPTN');
+})->name('pengajuanPTN');
 
 
 Route::get('/jadiPTN', function () {
