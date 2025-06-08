@@ -74,7 +74,7 @@
     <!-- Hero -->
     <section class="text-center mt-20 px-4">
         <h2 class="text-4xl md:text-6xl font-bold leading-tight">Selamat Datang<br>Panitia</h2>
-        <a href="#buat-acara"
+        <a href="{{ route('formjadiPTN') }}"
             class="inline-block mt-6 px-6 py-2 bg-gradient-to-r from-blue-700 to-green-600 rounded-full shadow-md hover:scale-105 transition text-white font-semibold text-lg">
             Buat Acara
         </a>

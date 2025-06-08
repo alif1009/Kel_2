@@ -116,7 +116,7 @@
                 Acara Seminar yang indah untuk memberikan Ilmu yang bermanfaat bagi orang lain!
             </p>
             <div class="flex space-x-4">
-                <a href="{{ route('formjadiPTN') }}" class="px-6 py-2 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition">
+                <a href="" class="px-6 py-2 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition">
     Daftar
 </a>
                 <a href="https://wa.me/628123456789" target="_blank"

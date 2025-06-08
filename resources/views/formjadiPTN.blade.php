@@ -1,87 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full">
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <!-- Link ke Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
-
-    <!-- Metadata standar -->
+     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title halaman -->
-    <title>Landing Page Event</title>
-
-    <!-- Load Tailwind CSS dari CDN -->
+    <title>EventAmaze</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        katibeh: ['Katibeh', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
-<body class="font-katibeh text-2xl">
-    <!-- NAVBAR -->
-    <nav class="flex items-center justify-between bg-gray-100 p-4">
+<body class="bg-black text-white font-sans min-h-screen relative">
 
-        <!-- Logo sebelah kiri -->
-        <div class="flex-1">
-            <a href="{{ route('beranda') }}" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
+    <!-- Background full screen -->
+    <div class="fixed inset-0 -z-10">
+        <img src="{{ asset('images/Frame 1 (5)[1].png') }}" alt="Background" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Navbar -->
+    <header class="flex justify-between items-center px-6 py-4">
+        <h1 class="text-xl font-bold">EventAmaze</h1>
+       <nav class="space-x-6 font-semibold flex items-center">
+    <a href="berandaPTN" class="hover:underline">Layanan Kami</a>
+
+    <!-- Dropdown untuk Tempat -->
+    <div x-data="{ open: false }" class="relative inline-block text-left">
+        <button @click="open = !open" class="hover:underline flex items-center space-x-1">
+            <span>Tempat</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+        <div x-show="open" @click.away="open = false" x-transition
+            class="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+            <div class="py-1 text-black">
+                <a href="{{ route('venue.gedungtekno') }}"
+                    class="block px-4 py-2 text-sm hover:bg-gray-100">Gedung Tekno</a>
+                <a href="{{ route('venue.auditorium') }}"
+                    class="block px-4 py-2 text-sm hover:bg-gray-100">Auditorium</a>
+            </div>
         </div>
+    </div>
 
-        <!-- Menu navigasi utama di tengah -->
-        <div class="flex-1 flex justify-center space-x-8">
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Acara Seminar <!--<span class="ml-1">▼</span>-->
-                </button>
+    <a href="seminarPTN" class="hover:underline">Seminar</a>
+</nav>
 
-                <!-- Dropdown Content -->
-
-            </div>
-
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat <!--<span class="ml-1">▼</span>-->
-                </button>
-
-                <!-- Dropdown Content -->
-
-            </div>
-            <div class="flex items-center space-x-2">
-                <a href="" class="flex items-center font-semibold hover:text-blue-500">
-                    Panitia
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Tombol Register dan Login di kanan -->
-        <div class="flex-1 flex justify-end space-x-4">
-            <!-- Search Bar -->
-            <form action="#" method="GET" class="relative">
-                <input type="text" name="query" placeholder="Search...."
-                    class="border border-gray-300 rounded-lg py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-                <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">
-                    🔍
-                </button>
-            </form>
-            <div x-data="{ open: false }" class="relative">
+        <div x-data="{ open: false }" class="relative">
                 <button @click="open = !open"
                     class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -89,12 +54,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>Profile(Mahasiswa)</span>
+                    <span>Profile(Panitia)</span>
                 </button>
                 <!-- Dropdown Menu -->
                 <div x-show="open" @click.away="open = false" x-transition
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-                    <a href="{{ route('profile.profil') }}"
+                    <a href="{{ route('profile.profilPTN') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
                     <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
                     <form method="POST" action="#">
@@ -104,9 +69,8 @@
                     </form>
                 </div>
             </div>
-            </a>
-        </div>
-    </nav>
+    </header>
+
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
     <div class="w-full max-w-2xl bg-gray-200 p-6 rounded shadow">
