@@ -13,7 +13,7 @@
   <aside class="w-64 bg-[#0b3558] text-white flex flex-col">
     <div class="text-2xl font-semibold p-5 border-b border-white">EventAmaze</div>
     <nav class="flex-1 px-2 py-4 space-y-2">
-      <a href="{{ url('stock-peralatan') }}"
+      <a href="{{ url('dashboardcard') }}"
         class="flex items-center gap-3 px-4 py-2 bg-[#f5c16c] text-black rounded-r-full font-semibold">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/home.png" alt="icon" class="w-6 h-6" />
         Dashboard
@@ -22,6 +22,11 @@
         class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/to-do.png" class="w-6 h-6" alt="icon" />
         Konfirmasi Acara
+      </a>
+      <a href="{{ url('konfirmasiPTN') }}"
+        class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/to-do.png" class="w-6 h-6" alt="icon" />
+        Konfirmasi Pantia
       </a>
       <a href="{{ url('seminarselesai') }}"
         class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
@@ -35,10 +40,61 @@
   <!-- Main Content -->
   <main class="flex-1 p-8 relative">
     <h1 class="text-2xl font-bold mb-4">Dashboard Card</h1>
+<div x-data="{ openForm: false }" class="relative z-10">
+  <!-- Tombol Tambah -->
+  <button @click="openForm = true" class="mb-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+    Tambah Card
+  </button>
 
-    <button class="mb-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-      Tambah Card
-    </button>
+  <!-- Overlay dan Form Modal -->
+  <div x-show="openForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" x-cloak>
+    <div @click.outside="openForm = false" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-xl mx-auto">
+      <h2 class="text-lg font-semibold mb-4">Form Tambah Seminar</h2>
+      <form enctype="multipart/form-data" method="POST" action="#">
+        <!-- CSRF (jika pakai Laravel) -->
+        @csrf
+
+        <!-- Kategori Seminar -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700">Kategori Seminar</label>
+          <input type="text" name="kategori" class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+
+        <!-- Judul Seminar -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700">Judul Seminar</label>
+          <input type="text" name="judul" class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+
+        <!-- Tanggal Acara -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700">Tanggal Acara</label>
+          <input type="date" name="tanggal" class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+
+        <!-- Waktu -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700">Waktu</label>
+          <input type="time" name="waktu" class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+
+        <!-- Poster -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-gray-700">Poster</label>
+          <input type="file" name="poster" accept="image/*" class="mt-1 block w-full text-sm border rounded px-3 py-2" required>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="flex gap-4 justify-end mt-6">
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Tambah</button>
+          <button type="button" @click="openForm = false" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Batal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
     <div class="bg-gray-300 p-4 rounded shadow">
       <table class="w-full table-auto border-collapse border border-black text-center">
         <thead class="bg-gray-400">
