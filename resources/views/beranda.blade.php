@@ -187,7 +187,7 @@
             <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 px-6">
                 <!-- Kartu 1 -->
                 <div class="bg-white shadow-lg rounded-xl overflow-hidden">
-                    <img src="{{ asset('images/seminar2.jpg') }}" alt="Seminar Informatika"
+                    <img src="{{ asset('images/seminar2.jpg') }}" alt="Seminar Pendidikan"
                         class="h-48 w-full object-cover">
                     <div class="bg-[#062952] text-white p-4">
                         <h4 class="text-2xl font-semibold">Seminar Pendidikan</h4>
@@ -197,7 +197,7 @@
 
                 <!-- Kartu 2 -->
                 <div class="bg-white shadow-lg rounded-xl overflow-hidden">
-                    <img src="{{ asset('images/seminar3.jpg') }}" alt="Seminar Mentality"
+                    <img src="{{ asset('images/seminar3.jpg') }}" alt="Seminar Kesehatan"
                         class="h-48 w-full object-cover">
                     <div class="bg-[#062952] text-white p-4">
                         <h4 class="text-2xl font-semibold">Seminar Kesehatan</h4>
@@ -210,8 +210,7 @@
     <!-- seminar -->
     <section class="bg-blue-900 text-white py-12 relative overflow-hidden">
         <!-- Background di belakang tulisan BAZAR -->
-        <img src="images/bazar.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30"
-            alt="Background Bazar">
+        
         <!-- Judul -->
         <div class="text-center mb-8">
             <h2 class="text-5xl font-bold">Seminar Yang Sedang Berlangsung</h2>
@@ -223,10 +222,10 @@
             <!-- Card seminar 1 -->
             <div
                 class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="" class="h-40 w-full object-cover">
+                <img src="{{ asset('images/seminar20.jpg') }}" class="h-40 w-full object-cover">
                 <div class="p-4">
                     <h3 class="font-bold mb-2">Seminar Pendidikan</h3>
-                    <a href=""
+                    <a href="/formpenonton"
                         class="inline-block bg-green-500 text-white text-lg font-semibold px-4 py-1 rounded-full hover:bg-green-600 transition">
                         Daftar
                     </a>
@@ -236,10 +235,10 @@
             <!-- Card seminar 2 -->
             <div
                 class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="}" class="h-40 w-full object-cover">
+                <img src="{{ asset('images/seminar.jpg') }}" class="h-40 w-full object-cover">
                 <div class="p-4">
                     <h3 class="font-bold mb-2">Seminar Kesehatan</h3>
-                    <a href=""
+                    <a href="/formpenonton"
                         class="inline-block bg-green-500 text-white text-lg font-semibold px-4 py-1 rounded-full hover:bg-green-600 transition">
                         Daftar
                     </a>

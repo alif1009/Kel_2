@@ -99,9 +99,6 @@ Route::get('/seminarselesai', function () {
     return view('seminarselesai');
 })->name('seminarselesai');
 
-Route::get('/tabel-invoice', function () {
-    return view('tabel-invoice');
-});
 
 Route::get('/dashboardcard', function () {
     return view('dashboardcard');
@@ -111,4 +108,26 @@ Route::get('/formcard', function () {
     return view('formcard');
 })->name('formcard');
 
+Route::get('/formpenonton', function () {
+    return view('formpenonton');
+})->name('formpenonton');
+
+Route::post('/formpenonton', function (Request $request) {
+    // Validasi sederhana
+    $request->validate([
+        'nama' => 'required',
+        'jurusan' => 'required',
+        'email' => 'required|email',
+        'hp' => 'required',
+        'seminar' => 'required',
+        'ktm' => 'required|file|mimes:jpg,png,pdf|max:2048'
+    ]);
+
+    // Simpan file jika diperlukan
+    if ($request->hasFile('ktm')) {
+        $request->file('ktm')->store('ktm', 'public');
+    }
+
+    return back()->with('success', 'Formulir berhasil dikirim!');
+})->name('formpenonton');
 

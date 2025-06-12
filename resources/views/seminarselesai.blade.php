@@ -44,7 +44,7 @@
             <th class="border border-black px-2 py-2">Nama Panitia</th>
             <th class="border border-black px-2 py-2">Kategori yg dipilih</th>
             <th class="border border-black px-2 py-2">Tempat</th>
-            <th class="border border-black px-2 py-2">Judul Acara</th>
+            <th class="border border-black px-2 py-2">Judul Seminar</th>
           </tr>
         </thead>
         <tbody class="bg-gray-300">

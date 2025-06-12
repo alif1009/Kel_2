@@ -100,6 +100,12 @@
                         class="w-full border border-black rounded-full px-4 py-2" required>
                 </div>
 
+                 <div>
+                    <label class="block font-semibold">Deskripsi</label>
+                    <input type="text" name="Deskripsikan acaramu"
+                        class="w-full border border-black rounded-full px-4 py-2" required>
+                </div>
+
                 <div>
                     <label class="block font-semibold">Surat izin Tempat</label>
                     <input type="file" name="surat_izin_tempat"

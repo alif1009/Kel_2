@@ -84,6 +84,7 @@
                             <th class="border px-6 py-4 font-medium">No. HP</th>
                             <th class="border px-6 py-4 font-medium">Email</th>
                             <th class="border px-6 py-4 font-medium">Jurusan</th>
+                            <th class="border px-6 py-4 font-medium">Seminar Yang Di ikuti</th>
                             <th class="border px-6 py-4 font-medium">KTM</th>
                         </tr>
                     </thead>
@@ -94,6 +95,7 @@
                             <td class="border px-6 py-4">08123456789</td>
                             <td class="border px-6 py-4">gillyganteng@gmail.com</td>
                             <td class="border px-6 py-4">Teknik Informatika</td>
+                            <td class="border px-6 py-4">Penitngnya menjaga kesehatan</td>
                             <td class="border px-6 py-4">Foto KTM</td>
                         </tr>
                         <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
@@ -103,9 +105,11 @@
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
+                            <td class="border px-6 py-4"></td>
                         </tr>
                         <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
                             <td class="border px-6 py-4 text-2xl font-bold">2.</td>
+                            <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
@@ -119,6 +123,7 @@
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
+                            <td class="border px-6 py-4"></td>
                         </tr>
                         <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
                             <td class="border px-6 py-4 text-2xl font-bold">4.</td>
@@ -127,9 +132,11 @@
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
+                            <td class="border px-6 py-4"></td>
                         </tr>
                         <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
                             <td class="border px-6 py-4 text-2xl font-bold">5.</td>
+                            <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
                             <td class="border px-6 py-4"></td>
