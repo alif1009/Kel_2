@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     <!-- Link ke Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Metadata standar -->
     <meta charset="UTF-8">
@@ -16,20 +16,10 @@
 
     <!-- Load Tailwind CSS dari CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        katibeh: ['Katibeh', 'cursive']
-                    }
-                }
-            }
-        }
-    </script>
+   
 </head>
 
-<body class="font-katibeh text-2xl">
+<body class="font-sans text-xl">
     <!-- NAVBAR -->
     <nav class="flex items-center justify-between bg-gray-100 p-4">
 
@@ -44,29 +34,20 @@
                 <!-- Trigger Dropdown -->
                 <button @click="open = !open"
                     class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Acara Seminar <!--<span class="ml-1">▼</span>-->
+                    Beranda <!--<span class="ml-1">▼</span>-->
                 </button>
 
                 <!-- Dropdown Content -->
 
             </div>
 
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
+            <!--<div x-data="{ open: false }" class="relative flex items-center space-x-2">
+                Trigger Dropdown 
                 <button @click="open = !open"
                     class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Tempat <!--<span class="ml-1">▼</span>-->
+                    Tempat <span class="ml-1">▼</span>
                 </button>
-
-                <!-- Dropdown Content -->
-
-            </div>
-            <div class="flex items-center space-x-2">
-               <a href="{{ route('jadiPTN') }}" class="flex items-center font-semibold hover:text-blue-500">
-    Panitia
-</a>
-
-            </div>
+            </div> -->
 
         </div>
 
@@ -113,8 +94,7 @@
         <div id="heroSlider" class="flex transition-transform duration-700 ease-in-out w-[400%]">
             <!-- Slide 1 -->
             <div class="w-full flex-shrink-0 relative">
-                <img src="{{ asset('images/seminar3.jpg') }}" alt="Slide 1" 
-                class="w-[1600px] h-[600px] object-cover">
+                <img src="{{ asset('images/seminar3.jpg') }}" alt="Slide 1" class="w-[1600px] h-[600px] object-cover">
                 <div class="absolute top-20 left-10 text-white">
                     <h1 class="text-5xl font-bold mb-2">Hidup Adalah Sebuah Peristiwa</h1>
                     <p class="text-2xl">Jadikan Peristiwa Anda Istimewa Bersama Kami</p>
@@ -123,8 +103,7 @@
 
             <!-- Slide 2 -->
             <div class="w-full flex-shrink-0 relative">
-                <img src="{{ asset('images/seminar.jpg') }}" alt="Slide 2"
-                    class="w-[1600px] h-[600px] object-cover">
+                <img src="{{ asset('images/seminar.jpg') }}" alt="Slide 2" class="w-[1600px] h-[600px] object-cover">
                 <div class="absolute top-20 left-10 text-white">
                     <h1 class="text-5xl font-bold mb-2">Ruang Inspirasi</h1>
                     <p class="text-2xl">Seminar & Workshop Profesional</p>
@@ -210,7 +189,7 @@
     <!-- seminar -->
     <section class="bg-blue-900 text-white py-12 relative overflow-hidden">
         <!-- Background di belakang tulisan BAZAR -->
-        
+
         <!-- Judul -->
         <div class="text-center mb-8">
             <h2 class="text-5xl font-bold">Seminar Yang Sedang Berlangsung</h2>
@@ -248,22 +227,22 @@
 
     </section>
 
-    <section class="w-full p-20 relative overflow-hidden">
-        <!-- Background tengah -->
+    <!--<section class="w-full p-20 relative overflow-hidden">
+         
         <div class="absolute inset-0 z-0">
             <img src="{{ asset('images/tempat.png') }}" alt="Background"
                 class="w-full h-full object-cover object-center">
         </div>
 
         <div class="relative z-10 flex flex-col items-center text-center">
-            <!-- Judul Tengah -->
+             
             <div class="mb-12 px-6 text-white">
                 <h2 class="text-5xl font-bold mb-3">Tempat</h2>
             </div>
 
-            <!-- Kartu Festival -->
+             Kartu Festival 
             <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 px-6 order-1 md:order-none">
-                <!-- Kartu 1 -->
+                 Kartu 1 
                 <div class="bg-white shadow-lg rounded-xl overflow-hidden">
                     <img src="{{ asset('images/tekno-bg.jpg') }}" alt="Festival Konser" class="h-48 w-full object-cover">
                     <div class="bg-[#062952] text-white p-4">
@@ -275,7 +254,7 @@
                     </div>
                 </div>
 
-                <!-- Kartu 2 -->
+                 Kartu 2 
                 <div class="bg-white shadow-lg rounded-xl overflow-hidden">
                     <img src="{{ asset('images/auditorium-bg.jpg') }}" alt="Festival Budaya" class="h-48 w-full object-cover">
                     <div class="bg-[#062952] text-white p-4">
@@ -288,7 +267,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
