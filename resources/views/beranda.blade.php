@@ -3,10 +3,7 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <!-- Link ke Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
+    <style>html{scroll-behavior:smooth}</style>
     <!-- Metadata standar -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,27 +16,35 @@
    
 </head>
 
-<body class="font-sans text-xl">
+<body class="text-xl">
     <!-- NAVBAR -->
-    <nav class="flex items-center justify-between bg-gray-100 p-4">
+    <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between bg-gray-100 p-4">
 
         <!-- Logo sebelah kiri -->
         <div class="flex-1">
-            <a href="/beranda" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
+            <a href="#home" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
         </div>
 
         <!-- Menu navigasi utama di tengah -->
-        <div class="flex-1 flex justify-center space-x-8">
-            <div x-data="{ open: false }" class="relative flex items-center space-x-2">
-                <!-- Trigger Dropdown -->
-                <button @click="open = !open"
-                    class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
-                    Beranda <!--<span class="ml-1">▼</span>-->
-                </button>
+<!-- Menu navigasi utama di tengah -->
+<div class="flex-1 flex justify-center">
+  <div class="relative flex items-center space-x-6 -ml-20">
+    
+    <!-- Scroll ke section “Seminar” -->
+    <a href="#Seminar"
+       class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
+      Kategori Seminar
+    </a>
 
-                <!-- Dropdown Content -->
+    <!-- Scroll ke section “Seminar Berlangsung” -->
+    <a href="#seminar-berlangsung"
+       class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
+      Seminar Yang Berlangsung
+    </a>
 
-            </div>
+  </div>
+</div>
+
 
             <!--<div x-data="{ open: false }" class="relative flex items-center space-x-2">
                 Trigger Dropdown 
@@ -69,14 +74,13 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>Profile(Mahasiswa)</span>
+                    <span class="text-lg">Profile (Mahasiswa)</span>
                 </button>
                 <!-- Dropdown Menu -->
                 <div x-show="open" @click.away="open = false" x-transition
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
                     <a href="{{ route('profile.profil') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
                     <form method="POST" action="#">
                         @csrf
                         <button type="submit"
@@ -89,7 +93,7 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative overflow-hidden">
+    <section id="home" class="relative overflow-hidden scroll-mt-24">
         <!-- Slider wrapper -->
         <div id="heroSlider" class="flex transition-transform duration-700 ease-in-out w-[400%]">
             <!-- Slide 1 -->
@@ -149,7 +153,7 @@
 
 
     <!-- SEMINAR SECTION -->
-    <section class="w-full p-20 relative overflow-hidden">
+   <section id="Seminar" class="w-full p-20 relative overflow-hidden">
         <!-- Background kiri -->
         <div class="absolute left-0 top-0 bottom-0 w-1/2 z-0">
             <img src="{{ asset('images/Frame 2 (2)[1].png') }}" alt="Background" class="w-full h-full object-cover">
@@ -158,7 +162,7 @@
         <div class="relative z-10 flex flex-col md:flex-row items-center">
             <!-- Teks dan Deskripsi -->
             <div class="md:w-1/2 mb-10 md:mb-0 px-6">
-                <h2 class="text-5xl font-bold mb-3">Seminar</h2>
+                <h2 class="text-4xl font-bold mb-3">Seminar</h2>
                 <p class="text-2xl text-gray-800 mb-6">Kami menyediakan beberapa kategori seminar seperti:</p>
             </div>
 
@@ -187,12 +191,10 @@
     </section>
 
     <!-- seminar -->
-    <section class="bg-blue-900 text-white py-12 relative overflow-hidden">
-        <!-- Background di belakang tulisan BAZAR -->
-
+    <section id="seminar-berlangsung" class="bg-blue-900 text-white py-12 relative overflow-hidden">
         <!-- Judul -->
         <div class="text-center mb-8">
-            <h2 class="text-5xl font-bold">Seminar Yang Sedang Berlangsung</h2>
+            <h2 class="text-3xl font-bold">Seminar Yang Sedang Berlangsung</h2>
             <p class="text-yellow-300">Mari Bergabung Ke Seminar Yang Sedang Berlangsung Sekarang</p>
         </div>
 
@@ -315,6 +317,8 @@
             appearOnScroll.observe(fader);
         });
     </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

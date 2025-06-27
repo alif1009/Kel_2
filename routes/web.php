@@ -131,3 +131,11 @@ Route::post('/formpenonton', function (Request $request) {
     return back()->with('success', 'Formulir berhasil dikirim!');
 })->name('formpenonton');
 
+// tampilkan halaman tambah seminar tanpa controller terlebih dahulu
+//Route::view('/updatecard', 'updatecard')->name('seminars.create');
+
+// Halaman edit seminar (sementara tanpa controller)
+// Halaman edit seminar (sementara tanpa controller)
+Route::view('/updatecard', 'updatecard')
+      ->name('updatecard');
+

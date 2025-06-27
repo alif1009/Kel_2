@@ -9,7 +9,7 @@
 
   <!-- Sidebar -->
   <aside class="w-64 bg-[#0b3558] text-white flex flex-col">
-    <div class="text-2xl font-semibold p-5 border-b border-white">Logo</div>
+    <div class="text-2xl font-semibold p-5 border-b border-white">EventAmaze</div>
 
     <nav class="flex-1 px-2 py-4 space-y-2">
       <a href="{{ url('dashboardcard') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">

@@ -61,7 +61,6 @@
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
                     <a href="{{ route('profile.profilPTN') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
                     <form method="POST" action="#">
                         @csrf
                         <button type="submit"
@@ -82,20 +81,34 @@
 
     <!-- Layanan Kami -->
     <section id="layanan" class="mt-32 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-2"><span class="text-green-400">Layanan</span> Kami</h3>
-        <p class="mb-8">Kami memberikan layanan berupa pelayanan pembuatan Event Seminar serta kami menyediakan
+        <h3 class="text-3xl font-bold mb-2 text-center">
+  <span class="text-white-400">Layanan</span> Kami</h3>
+        <p class="mb-8 text-center">Kami memberikan layanan berupa pelayanan pembuatan Event Seminar serta kami menyediakan
             konsultasi dalam pembuatan Event Seminar.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="relative">
-                <img src="{{ asset('images/berandamhs.jpg') }}" alt="Event Planning" class="rounded-lg">
-                <span class="absolute bottom-4 left-4 text-white text-xl font-bold">Event Planning</span>
-            </div>
-            <div class="relative">
-                <img src="{{ asset('images/berandamhs2.jpg') }}" alt="Event Konsultasi" class="rounded-lg">
-                <span class="absolute bottom-4 left-4 text-white text-xl font-bold">Event Konsultasi</span>
-            </div>
-        </div>
+  <!-- Kartu 1 -->
+  <div class="relative">
+    <!-- ↓ tambah w-full h-56 object-cover  -->
+    <img src="{{ asset('images/berandamhs.jpg') }}"
+         alt="Perencanaan Seminar"
+         class="w-full h-85 object-cover rounded-lg">
+    <span class="absolute bottom-4 left-4 text-white text-xl font-bold">
+      Event Planning
+    </span>
+  </div>
+
+  <!-- Kartu 2 -->
+  <div class="relative">
+    <img src="{{ asset('images/berandamhs2.jpg') }}"
+         alt="Konsultasi Seminar"
+         class="w-full h-85 object-cover rounded-lg">
+    <span class="absolute bottom-4 left-4 text-white text-xl font-bold">
+      Event Konsultasi
+    </span>
+  </div>
+</div>
+
 
         <!--<div class="flex justify-center mt-10 gap-16">
             <div class="text-center">

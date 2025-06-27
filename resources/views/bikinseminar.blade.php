@@ -93,7 +93,21 @@
                     <input type="text" name="kategori_seminar"
                         class="w-full border border-black rounded-full px-4 py-2" required>
                 </div>
-
+                <div>
+                    <label class="block font-semibold">Narasumber 1</label>
+                    <input type="text" name="Narasumber 1"
+                        class="w-full border border-black rounded-full px-4 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold">Narasumber 2</label>
+                    <input type="text" name="Narasumber 2"
+                        class="w-full border border-black rounded-full px-4 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold">Narasumber 3</label>
+                    <input type="text" name="Narasumber 3"
+                        class="w-full border border-black rounded-full px-4 py-2" required>
+                </div>
                 <div>
                     <label class="block font-semibold">Judul</label>
                     <input type="text" name="judul"
