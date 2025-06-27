@@ -119,7 +119,31 @@
             <td class="border border-black">
               <div class="flex justify-center gap-2">
                 <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm">Delete</button>
-                <button class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">Ubah</button>
+               <div x-data="{ openModal:false }" x-cloak>
+    <!-- Tombol Ubah -->
+    <button
+        @click="openModal = true"
+        class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">
+        Ubah
+    </button>
+ <!-- ===== Modal overlay ===== -->
+    <div
+        x-show="openModal"
+        x-transition.opacity
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+<div
+            @click.away="openModal = false"
+            x-transition.scale
+            class="bg-white w-full max-w-lg rounded-lg p-6 shadow-xl relative">
+ <button
+                @click="openModal = false"
+                class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl leading-none">
+                &times;
+            </button>
+            @include('updatecard')  {{-- file resources/views/updatecard.blade.php --}}
+        </div>
+    </div>
+</div>
               </div>
             </td>
           </tr>

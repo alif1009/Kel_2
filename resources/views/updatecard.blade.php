@@ -86,11 +86,12 @@
 
             <!-- Tombol aksi -->
             <div class="flex justify-end space-x-3 pt-2">
-                <a href="#"
-                   class="inline-flex items-center px-6 py-2 rounded-md
-                          bg-gray-500 hover:bg-gray-600 text-white">
-                    Batal
-                </a>
+               <a  href="#"
+    @click.prevent="openModal = false"
+    class="inline-flex items-center px-6 py-2 rounded-md bg-gray-500 hover:bg-gray-600 text-white">
+    Batal
+</a>
+
                 <button type="submit"
                         class="inline-flex items-center px-6 py-2 rounded-md
                                bg-green-600 hover:bg-green-700 text-white font-semibold">
