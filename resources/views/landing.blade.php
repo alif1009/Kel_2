@@ -52,7 +52,7 @@
   <li><a href="#Tentang Kami" class="block px-4 hover:text-blue-400 transition duration-300">Tentang Kami</a></li>
   <li><a href="#Visi" class="block px-4 hover:text-blue-400 transition duration-300">Visi</a></li>
   <li><a href="#Misi" class="block px-4 hover:text-blue-400 transition duration-300">Misi</a></li>
-  <li><a href="" class="block px-4 hover:text-blue-400 transition duration-300">Kontak</a></li>
+  <li><a href="#Kontak" class="block px-4 hover:text-blue-400 transition duration-300">Kontak</a></li>
 </ul>
   </nav>
 
@@ -126,10 +126,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-white py-6 px-4 text-center">
-    <h3 class="text-lg font-bold mb-2">EventAmaze</h3>
+  <footer id="Kontak" class="bg-black text-white py-6 px-4 text-center">
+  <h3 class="text-lg font-bold mb-2">EventAmaze</h3>
     <div class="flex justify-center space-x-4 mb-2">
-      <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
+      <a href="https://www.instagram.com/___.lipp/"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
       <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/twitter.png" /></a>
       <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/facebook-new.png" /></a>
     </div>
