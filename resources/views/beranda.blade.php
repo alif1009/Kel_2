@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title halaman -->
-    <title>Landing Page Event</title>
+    <title>Beranda</title>
 
     <!-- Load Tailwind CSS dari CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -81,7 +81,7 @@
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
                     <a href="{{ route('profile.profil') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                    <form method="POST" action="#">
+                    <form method="POST" action="">
                         @csrf
                         <button type="submit"
                             class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
@@ -277,12 +277,10 @@
     <footer class="bg-black text-white py-8">
         <div class="flex justify-center space-x-6 mb-4">
             <!-- Ikon sosial media -->
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
+            <a href="https://www.instagram.com/ptricmliasri/"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
                     class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
-                    class="w-6 h-6"></a>
+            <a href="https://wa.me/6287746338009"target="_blank"rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"alt="WhatsApp" class="w-6 h-6"></a>
         </div>
 
         <!-- Hak cipta dan link tambahan -->

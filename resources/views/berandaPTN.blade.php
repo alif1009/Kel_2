@@ -169,12 +169,11 @@
     <footer class="text-white py-8 mt-32">
         <div class="flex justify-center space-x-6 mb-4">
             <!-- Ikon sosial media -->
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
+            <a href="https://www.instagram.com/g.viantino/"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
                     class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
-                    class="w-6 h-6"></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
-                    class="w-6 h-6"></a>
+           <a href="https://wa.me/6287730217133"target="_blank"rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"alt="WhatsApp" class="w-6 h-6"></a>
+            
         </div>
 
         <div class="text-center text-gray-400 text-sm">
