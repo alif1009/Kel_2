@@ -152,9 +152,9 @@
     <footer class="text-white py-6 px-4 text-center">
         <h3 class="text-lg font-bold mb-2">EventAmaze</h3>
         <div class="flex justify-center space-x-4 mb-2">
-            <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/twitter.png" /></a>
-            <a href="#"><img src="https://img.icons8.com/ios-filled/25/ffffff/facebook-new.png" /></a>
+            <a href="https://www.instagram.com/ramdhani_.02/"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
+           <a href="https://wa.me/6287730217133"target="_blank"rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"alt="WhatsApp" class="w-6 h-6"></a>
         </div>
         <p class="text-sm">&copy; 2025 Your Website. All rights reserved. |
             <a href="#" class="underline">Privacy Policy</a> |
