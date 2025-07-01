@@ -213,7 +213,7 @@
                     <p class="text-sm text-gray-500 mb-3">
                         Narasumber: Dani ganteng<br>
                         Lokasi: Auditorium<br>
-                        
+
                     </p>
                     <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
                     <a href="/formpenonton"
@@ -235,7 +235,7 @@
                     <p class="text-sm text-gray-500 mb-3">
                         Narasumber: Dani ganteng<br>
                         Lokasi: Gedung Tekno<br>
-                        
+
                     </p>
                     <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
                     <a href="/formpenonton"
@@ -337,8 +337,6 @@
             appearOnScroll.observe(fader);
         });
     </script>
-
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
