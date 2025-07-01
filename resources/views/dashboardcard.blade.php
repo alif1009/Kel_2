@@ -185,7 +185,7 @@
 
   <!-- Dropdown -->
   <div x-show="open" @click.away="open = false" class="mt-2 w-48 bg-white rounded-md shadow-lg py-2 absolute right-0 z-10">
-    <a href="{{ route('profile.profilADM') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+    <a href="{{ route('profile.profilADMbaru') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
     <form method="POST" action="#">
       @csrf
       <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</button>

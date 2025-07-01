@@ -20,7 +20,7 @@
     <header class="flex justify-between items-center px-6 py-4">
         <h1 class="text-xl font-bold">EventAmaze</h1>
        <nav class="space-x-6 font-semibold flex items-center">
-    <a href="berandaPTN" class="hover:underline">Layanan Kami</a>
+    <a href="#layanan" class="hover:underline">Layanan Kami</a>
 
     <!-- Dropdown untuk Tempat -->
     <div x-data="{ open: false }" class="relative inline-block text-left">
@@ -59,7 +59,7 @@
                 <!-- Dropdown Menu -->
                 <div x-show="open" @click.away="open = false" x-transition
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-                    <a href="{{ route('profile.profilPTN') }}"
+                    <a href="{{ route('profile.profilPTNbaru') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
                     <form method="POST" action="#">
                         @csrf
@@ -86,31 +86,35 @@
         <p class="mb-8 text-center">Kami memberikan layanan berupa pelayanan pembuatan Event Seminar serta kami menyediakan
             konsultasi dalam pembuatan Event Seminar.</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  <!-- Kartu 1 -->
-  <div class="relative">
-    <!-- ↓ tambah w-full h-56 object-cover  -->
-    <img src="{{ asset('images/berandamhs.jpg') }}"
-         alt="Perencanaan Seminar"
-         class="w-full h-85 object-cover rounded-lg">
-    <span class="absolute bottom-4 left-4 text-white text-xl font-bold">
-      Event Planning
-    </span>
-  </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
+    <!-- Kartu 1 -->
+    <a href="{{ url('/layanan/planning') }}" class="block group">
+        <div class="relative overflow-hidden rounded-xl shadow-lg transition-transform transform group-hover:scale-105">
+            <img src="{{ asset('images/berandamhs.jpg') }}"
+                alt="Perencanaan Seminar"
+                class="w-full h-60 object-cover" />
+            <span class="absolute bottom-0 left-0 w-full px-4 py-2 text-white text-lg font-semibold">
+                Event Planning
+            </span>
+        </div>
+    </a>
 
-  <!-- Kartu 2 -->
-  <div class="relative">
-    <img src="{{ asset('images/berandamhs2.jpg') }}"
-         alt="Konsultasi Seminar"
-         class="w-full h-85 object-cover rounded-lg">
-    <span class="absolute bottom-4 left-4 text-white text-xl font-bold">
-      Event Konsultasi
-    </span>
-  </div>
+    <!-- Kartu 2 -->
+    <a href="{{ url('/layanan/konsultasi') }}" class="block group">
+        <div class="relative overflow-hidden rounded-xl shadow-lg transition-transform transform group-hover:scale-105">
+            <img src="{{ asset('images/berandamhs2.jpg') }}"
+                alt="Konsultasi Seminar"
+                class="w-full h-60 object-cover" />
+            <span class="absolute bottom-0 left-0 w-full px-4 py-2 text-white text-lg font-semibold">
+                Event Konsultasi
+            </span>
+        </div>
+    </a>
 </div>
 
 
-        <!--<div class="flex justify-center mt-10 gap-16">
+
+        <div class="flex justify-center mt-10 gap-16">
             <div class="text-center">
                 <div class="text-2xl font-bold">150+</div>
                 <div>Event Berhasil</div>
@@ -120,7 +124,7 @@
                 <div>Event Konsultasi</div>
             </div>
         </div>
-    </section>-->
+    </section>
 
     <!-- Tempat -->
     <section id="tempat" class="mt-32 px-6 max-w-6xl mx-auto text-center">
