@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="h-full">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,7 @@
     {{-- CDN Tailwind – ganti ke Vite build jika proyekmu sudah dikonfigurasi --}}
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="min-h-full bg-gray-100 flex items-start justify-center py-12">
 
     <div class="w-full max-w-lg bg-white shadow-lg rounded-xl p-8 sm:p-10 space-y-6">
@@ -15,10 +17,7 @@
             Form Ubah Card Seminar
         </h1>
 
-        <form action="#"
-              method="POST"
-              enctype="multipart/form-data"
-              class="space-y-6">
+        <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             @method('PUT') {{-- spoofing HTTP PUT --}}
 
@@ -27,9 +26,7 @@
                 <label for="kategori" class="block text-sm font-medium text-gray-700 mb-1">
                     Kategori Seminar
                 </label>
-                <input id="kategori" name="kategori" type="text" required
-                       value="{{ old('kategori') }}"
-                       class="w-full rounded-md border border-gray-300 p-3
+                <input id="kategori" name="kategori" type="text" required value="{{ old('kategori') }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500
                               placeholder-gray-400">
             </div>
@@ -39,9 +36,16 @@
                 <label for="judul" class="block text-sm font-medium text-gray-700 mb-1">
                     Judul Seminar
                 </label>
-                <input id="judul" name="judul" type="text" required
-                       value="{{ old('judul') }}"
-                       class="w-full rounded-md border border-gray-300 p-3
+                <input id="judul" name="judul" type="text" required value="{{ old('judul') }}" class="w-full rounded-md border border-gray-300 p-3
+                              focus:ring-2 focus:ring-green-500 focus:border-green-500
+                              placeholder-gray-400">
+            </div>
+
+             <div>
+                <label for="Deskripsi" class="block text-sm font-medium text-gray-700 mb-1">
+                    Deskripsi 
+                </label>
+                <input id="Deskripsi" name="Deskripsi" type="text" required value="{{ old('Deskripsi') }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500
                               placeholder-gray-400">
             </div>
@@ -51,9 +55,7 @@
                 <label for="tanggal" class="block text-sm font-medium text-gray-700 mb-1">
                     Tanggal Acara
                 </label>
-                <input id="tanggal" name="tanggal" type="date" required
-                       value="{{ old('tanggal') }}"
-                       class="w-full rounded-md border border-gray-300 p-3
+                <input id="tanggal" name="tanggal" type="date" required value="{{ old('tanggal') }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500">
             </div>
 
@@ -62,9 +64,7 @@
                 <label for="waktu" class="block text-sm font-medium text-gray-700 mb-1">
                     Waktu
                 </label>
-                <input id="waktu" name="waktu" type="time" required
-                       value="{{ old('waktu') }}"
-                       class="w-full rounded-md border border-gray-300 p-3
+                <input id="waktu" name="waktu" type="time" required value="{{ old('waktu') }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500">
             </div>
 
@@ -73,8 +73,7 @@
                 <label for="poster" class="block text-sm font-medium text-gray-700 mb-1">
                     Poster
                 </label>
-                <input id="poster" name="poster" type="file" accept="image/*"
-                       class="block w-full text-sm text-gray-900
+                <input id="poster" name="poster" type="file" accept="image/*" class="block w-full text-sm text-gray-900
                               file:mr-4 file:py-2 file:px-4
                               file:rounded-md file:border-0
                               file:text-sm file:font-semibold
@@ -86,14 +85,12 @@
 
             <!-- Tombol aksi -->
             <div class="flex justify-end space-x-3 pt-2">
-               <a  href="#"
-    @click.prevent="openModal = false"
-    class="inline-flex items-center px-6 py-2 rounded-md bg-gray-500 hover:bg-gray-600 text-white">
-    Batal
-</a>
+                <a href="#" @click.prevent="openModal = false"
+                    class="inline-flex items-center px-6 py-2 rounded-md bg-gray-500 hover:bg-gray-600 text-white">
+                    Batal
+                </a>
 
-                <button type="submit"
-                        class="inline-flex items-center px-6 py-2 rounded-md
+                <button type="submit" class="inline-flex items-center px-6 py-2 rounded-md
                                bg-green-600 hover:bg-green-700 text-white font-semibold">
                     Ubah
                 </button>
@@ -102,4 +99,5 @@
     </div>
 
 </body>
+
 </html>

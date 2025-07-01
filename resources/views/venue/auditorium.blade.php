@@ -97,8 +97,8 @@
 
                 <!-- Tombol -->
                 <div class="flex gap-4">
-                    <a href="{{ url('pemesanan') }}"
-                        class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">Pesan</a>
+                    <a href="{{ url('bikinseminar') }}"
+                        class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">Bikin Acaramu Disini</a>
                     <a href="https://wa.me/6295183128564" target="_blank"
                         class="bg-green-600 px-6 py-2 rounded-full text-white hover:bg-green-700 transition">Chat by
                         Whatsapp</a>

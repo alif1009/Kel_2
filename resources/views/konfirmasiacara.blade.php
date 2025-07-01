@@ -41,12 +41,15 @@
         <thead class="bg-gray-400">
           <tr>
             <th class="border border-black px-2 py-2">No</th>
-            <th class="border border-black px-2 py-2">ID</th>
-            <th class="border border-black px-2 py-2">Nama Lengkap</th>
-            <th class="border border-black px-2 py-2">Juduk Acara</th>
+            <th class="border border-black px-2 py-2">Nama Panitia</th>
+            <th class="border border-black px-2 py-2">Kategori Seminar</th>
+            <th class="border border-black px-2 py-2">Judul</th>
+            <th class="border border-black px-2 py-2">Deskripsi</th>
+            <th class="border border-black px-2 py-2">TOR</th>
             <th class="border border-black px-2 py-2">Rundown</th>
-            <th class="border border-black px-2 py-2">Poster</th>
-            <th class="border border-black px-2 py-2">Surat Izin</th>
+            <th class="border border-black px-2 py-2">Borang Tempat</th>
+            <th class="border border-black px-2 py-2">Waktu</th>
+            <th class="border border-black px-2 py-2">Tanggal</th>
             <th class="border border-black px-2 py-2">Aksi</th>
           </tr>
         </thead>
@@ -58,6 +61,9 @@
             <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>
+            <td class="border border-black"></td>
+             <td class="border border-black"></td>
+              <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black">
               <div class="flex justify-center gap-2">
@@ -71,6 +77,9 @@
           @for ($i = 0; $i < 4; $i++)
           <tr class="h-16">
             <td class="border border-black">&nbsp;</td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
+            <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>
             <td class="border border-black"></td>

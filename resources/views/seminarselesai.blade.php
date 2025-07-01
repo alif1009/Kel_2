@@ -34,7 +34,7 @@
 
   <!-- Main Content -->
   <main class="flex-1 p-8">
-    <h1 class="text-2xl font-bold mb-4">Orderan Selesai</h1>
+    <h1 class="text-2xl font-bold mb-4">Seminar Selesai</h1>
 
     <div class="bg-gray-300 p-4 rounded shadow">
       <table class="w-full table-auto border-collapse border border-black text-center text-lg">

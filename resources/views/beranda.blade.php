@@ -3,7 +3,11 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <style>html{scroll-behavior:smooth}</style>
+    <style>
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
     <!-- Metadata standar -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +17,7 @@
 
     <!-- Load Tailwind CSS dari CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-   
+
 </head>
 
 <body class="text-xl">
@@ -26,27 +30,25 @@
         </div>
 
         <!-- Menu navigasi utama di tengah -->
-<!-- Menu navigasi utama di tengah -->
-<div class="flex-1 flex justify-center">
-  <div class="relative flex items-center space-x-6 -ml-20">
-    
-    <!-- Scroll ke section “Seminar” -->
-    <a href="#Seminar"
-       class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
-      Kategori Seminar
-    </a>
+        <!-- Menu navigasi utama di tengah -->
+        <div class="flex-1 flex justify-center">
+            <div class="relative flex items-center space-x-6 -ml-20">
 
-    <!-- Scroll ke section “Seminar Berlangsung” -->
-    <a href="#seminar-berlangsung"
-       class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
-      Seminar Yang Berlangsung
-    </a>
+                <!-- Scroll ke section “Seminar” -->
+                <a href="#Seminar" class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
+                    Kategori Seminar
+                </a>
 
-  </div>
-</div>
+                <!-- Scroll ke section “Seminar Berlangsung” -->
+                <a href="#seminar-berlangsung" class="text-lg font-semibold hover:text-blue-500 focus:outline-none">
+                    Seminar Yang Berlangsung
+                </a>
+
+            </div>
+        </div>
 
 
-            <!--<div x-data="{ open: false }" class="relative flex items-center space-x-2">
+        <!--<div x-data="{ open: false }" class="relative flex items-center space-x-2">
                 Trigger Dropdown 
                 <button @click="open = !open"
                     class="flex items-center font-semibold hover:text-blue-500 focus:outline-none">
@@ -153,7 +155,7 @@
 
 
     <!-- SEMINAR SECTION -->
-   <section id="Seminar" class="w-full p-20 relative overflow-hidden">
+    <section id="Seminar" class="w-full p-20 relative overflow-hidden">
         <!-- Background kiri -->
         <div class="absolute left-0 top-0 bottom-0 w-1/2 z-0">
             <img src="{{ asset('images/Frame 2 (2)[1].png') }}" alt="Background" class="w-full h-full object-cover">
@@ -201,30 +203,50 @@
         <!--  seminar -->
         <div class="flex justify-center space-x-8">
             <!-- Card seminar 1 -->
-            <div
-                class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="{{ asset('images/seminar20.jpg') }}" class="h-40 w-full object-cover">
-                <div class="p-4">
+            <div class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg
+         flex flex-col"> <!-- flex container -->
+                <img src="{{ asset('images/seminar2.jpg') }}" class="h-40 w-full object-cover" />
+                <!-- Bagian isi dibuat flex kolom juga agar tombol bisa diposisikan di bawah -->
+                <div class="p-4 flex flex-col h-full">
                     <h3 class="font-bold mb-2">Seminar Pendidikan</h3>
+
+                    <p class="text-sm text-gray-500 mb-3">
+                        Narasumber: Dani ganteng<br>
+                        Lokasi: Auditorium<br>
+                        
+                    </p>
+                    <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
                     <a href="/formpenonton"
-                        class="inline-block bg-green-500 text-white text-lg font-semibold px-4 py-1 rounded-full hover:bg-green-600 transition">
+                        class="mt-auto mx-auto bg-green-500 text-white text-base font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition text-center">
                         Daftar
                     </a>
+
                 </div>
             </div>
 
             <!-- Card seminar 2 -->
-            <div
-                class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg opacity-0 translate-y-5 fade-in transition-all duration-700 ease-in-out">
-                <img src="{{ asset('images/seminar.jpg') }}" class="h-40 w-full object-cover">
-                <div class="p-4">
-                    <h3 class="font-bold mb-2">Seminar Kesehatan</h3>
+            <div class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg
+         flex flex-col"> <!-- flex container -->
+                <img src="{{ asset('images/seminar.jpg') }}" class="h-40 w-full object-cover" />
+                <!-- Bagian isi dibuat flex kolom juga agar tombol bisa diposisikan di bawah -->
+                <div class="p-4 flex flex-col h-full">
+                    <h3 class="font-bold mb-2">Seminar Pendidikan</h3>
+
+                    <p class="text-sm text-gray-500 mb-3">
+                        Narasumber: Dani ganteng<br>
+                        Lokasi: Gedung Tekno<br>
+                        
+                    </p>
+                    <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
                     <a href="/formpenonton"
-                        class="inline-block bg-green-500 text-white text-lg font-semibold px-4 py-1 rounded-full hover:bg-green-600 transition">
+                        class="mt-auto mx-auto bg-green-500 text-white text-base font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition text-center">
                         Daftar
                     </a>
+
                 </div>
             </div>
+
+        </div>
         </div>
 
     </section>
@@ -277,10 +299,10 @@
     <footer class="bg-black text-white py-8">
         <div class="flex justify-center space-x-6 mb-4">
             <!-- Ikon sosial media -->
-            <a href="https://www.instagram.com/ptricmliasri/"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
-                    class="w-6 h-6"></a>
-            <a href="https://wa.me/6287746338009"target="_blank"rel="noopener noreferrer">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"alt="WhatsApp" class="w-6 h-6"></a>
+            <a href="https://www.instagram.com/ptricmliasri/"><img
+                    src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="w-6 h-6"></a>
+            <a href="https://wa.me/6287746338009" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6"></a>
         </div>
 
         <!-- Hak cipta dan link tambahan -->

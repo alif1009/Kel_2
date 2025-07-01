@@ -28,6 +28,13 @@
         <input type="text" id="judul" name="judul" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
       </div>
 
+      <!-- Narasumber -->
+      <div class="mb-4">
+        <label for="Narasumber" class="block text-sm font-medium text-gray-700">Narasumber</label>
+        <input type="text" id="Narasumber" name="Narasumber" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+      </div>
+
+
       <!-- Tanggal Acara -->
       <div class="mb-4">
         <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Acara</label>
