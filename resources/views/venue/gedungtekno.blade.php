@@ -97,11 +97,8 @@
                 <h1 class="text-5xl font-bold mb-4">Gedung Tekno</h1>
                 <p class="mb-1">Polteknik Negeri Batam</p>
                 <p class="mb-4">Batam, Kepulaun 29439</p>
-
                 <!-- Tombol -->
                 <div class="flex gap-4">
-                    <a href="{{ url('bikinseminar') }}"
-                        class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">Bikin Acaramu Disini</a>
                     <a href="https://wa.me/+62 822-8782-5959" target="_blank"
                         class="bg-green-600 px-6 py-2 rounded-full text-white hover:bg-green-700 transition">Chat by
                         Whatsapp</a>
@@ -131,42 +128,12 @@
 
         <div class="space-y-4 text-sm text-gray-700">
             <div>
-                <strong>Alat Presentasi :</strong>
-                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
-                    <li>Laptop/Komputer</li>
-                    <li>Proyektor + Layar Proyektor</li>
-                    <li>Pointer</li>
-                    <li>Kabel Koneksi</li>
-                    <li>Remote Presentasi</li>
-                </ul>
-            </div>
-
-            <div>
-                <strong>Alat Dokumentasi :</strong>
-                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
-                    <li>Kamera</li>
-                    <li>Tripod</li>
-                    <li>Microphone Eksternal</li>
-                    <li>Buku Tamu</li>
-                    <li>Alat Pencatat</li>
-                </ul>
-            </div>
-
-            <div>
                 <strong>Perlengkapan Meja Panitia & Registrasi :</strong>
                 <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
-                    <li>Meja & Kursi Panitia</li>
-                    <li>ID Card</li>
-                    <li>Map / Folder Materi Seminar</li>
-                    <li>Formulir Registrasi</li>
-                    <li>Snack Box</li>
-                </ul>
-            </div>
-
-            <div>
-                <strong>Peserta :</strong>
-                <ul class="list-disc list-inside ml-4 mt-1 text-gray-600">
-                    <li>Snack Box</li>
+                    <li>Meja</li>
+                    <li>Alfatron</li>
+                    <li>Kursi</li>
+                    <li>Mic</li>
                 </ul>
             </div>
         </div>

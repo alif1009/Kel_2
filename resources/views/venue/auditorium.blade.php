@@ -97,8 +97,6 @@
 
                 <!-- Tombol -->
                 <div class="flex gap-4">
-                    <a href="{{ url('bikinseminar') }}"
-                        class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black transition">Bikin Acaramu Disini</a>
                     <a href="https://wa.me/6295183128564" target="_blank"
                         class="bg-green-600 px-6 py-2 rounded-full text-white hover:bg-green-700 transition">Chat by
                         Whatsapp</a>
@@ -126,42 +124,12 @@
 
         <div class="space-y-6">
             <div>
-                <h3 class="font-semibold mb-1">Alat Presentasi:</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>Laptop/Komputer</li>
-                    <li>Proyektor + Layar Proyektor</li>
-                    <li>Pointer</li>
-                    <li>Kabel Koneksi</li>
-                    <li>Remote Presentasi</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="font-semibold mb-1">Alat Dokumentasi:</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>Kamera</li>
-                    <li>Tripod</li>
-                    <li>Microphone Eksternal</li>
-                    <li>Buku Tamu</li>
-                    <li>Alat Pencatat</li>
-                </ul>
-            </div>
-
-            <div>
                 <h3 class="font-semibold mb-1">Perlengkapan Meja Panitia & Registrasi:</h3>
                 <ul class="list-disc list-inside text-gray-600">
-                    <li>Meja & Kursi Panitia</li>
-                    <li>ID Card</li>
-                    <li>Map / Folder Materi Seminar</li>
-                    <li>Formulis Registrasi</li>
-                    <li>Snack Box</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="font-semibold mb-1">Peserta:</h3>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li>SnackBox</li>
+                    <li>Meja</li>
+                    <li>Alfatron</li>
+                    <li>Kursi</li>
+                    <li>Mic</li>
                 </ul>
             </div>
         </div>

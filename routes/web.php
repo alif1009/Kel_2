@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\registerController;
@@ -139,3 +141,25 @@ Route::post('/formpenonton', function (Request $request) {
 Route::view('/updatecard', 'updatecard')
       ->name('updatecard');
 
+      // bagian event planning sama konstultasi
+Route::get('/layanan/planning', function () {
+    return view('layanan.planning');
+});
+
+Route::get('/layanan/konsultasi', function () {
+    return view('layanan.konsultasi');
+});
+
+Route::get('/profile/profilADMbaru', function () {
+    return view('profile.profilADMbaru');
+})->name('profile.profilADMbaru');
+
+Route::get('/profile/profilPTNbaru', function () {
+    return view('profile.profilPTNbaru');
+})->name('profile.profilPTNbaru');
+
+// Profil
+Route::get('/profile.profilbaru', [ProfileController::class, 'index'])->name('profile.profilbaru');
+
+// Settings (ikon gear)
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
