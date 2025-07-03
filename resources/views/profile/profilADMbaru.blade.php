@@ -13,7 +13,7 @@
     <a href="{{ url('dashboardcard') }}" class="text-lg font-bold hover:underline">Back</a>
     <h1 class="text-4xl font-bold text-center absolute left-1/2 transform -translate-x-1/2">Profile</h1>
      <!-- Icon Settings (Gambar JPG) -->
-    <a href="/settings" class="w-6 h-6">
+    <a href="{{ url('profile/settingadm') }}" class="w-6 h-6">
       <img src="/images/iconsettings.png" alt="Settings Icon" class="w-12 h-12 object-cover hover:opacity-80">
     </a>
   </div>
@@ -50,7 +50,11 @@
 
   </div>
 </div>
-
+<!-- Background Decoration (optional) -->
+  <img src="{{ asset('images/dekor1.png') }}" alt="dekor"
+       class="absolute bottom-0 left-0 w-80 opacity-80 hidden md:block">
+  <img src="{{ asset('images/dekor2.png') }}" alt="dekor"
+       class="absolute bottom-0 right-0 w-90 opacity-80 hidden md:block">
 
 </body>
 </html>

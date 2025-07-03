@@ -150,6 +150,10 @@ Route::get('/layanan/konsultasi', function () {
     return view('layanan.konsultasi');
 });
 
+Route::get('/profile/profilbaru', function () {
+    return view('profile.profilbaru');
+})->name('profile.profilbaru');
+
 Route::get('/profile/profilADMbaru', function () {
     return view('profile.profilADMbaru');
 })->name('profile.profilADMbaru');
@@ -161,5 +165,19 @@ Route::get('/profile/profilPTNbaru', function () {
 // Profil
 Route::get('/profile.profilbaru', [ProfileController::class, 'index'])->name('profile.profilbaru');
 
-// Settings (ikon gear)
-Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+
+    
+    // Menampilkan halaman settings (edit profil)
+    Route::get('/profile/settingsmhs', [SettingsController::class, 'editMhs'])->name('settings.mhs');
+
+    // Menampilkan halaman settings (edit profil)
+    Route::get('/settingspanitia', [SettingsController::class, 'editPtn'])->name('settings.panitia');
+    Route::get('/profile/settingsptn', [SettingsController::class, 'editPtn'])->name('settings.ptn');
+    Route::post('/profile/settingsptn', [SettingsController::class, 'updatePtn'])->name('settings.ptn.update');
+
+    // Menampilkan halaman settings (edit profil)
+    Route::get('/settingsadm', [SettingsController::class, 'edit'])->name('profile.edit');
+
+    // Menyimpan perubahan profil (form method: POST/PUT)
+    Route::put('/settings/update', [SettingsController::class, 'update'])->name('profile.update');
+

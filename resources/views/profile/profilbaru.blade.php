@@ -13,7 +13,7 @@
     <a href="{{ url('beranda') }}" class="text-lg font-bold hover:underline">Back</a>
     <h1 class="text-4xl font-bold text-center absolute left-1/2 transform -translate-x-1/2">Profile</h1>
      <!-- Icon Settings (Gambar JPG) -->
-    <a href="/settings" class="w-6 h-6">
+    <a href="{{ url('profile/settingsmhs') }}" class="w-6 h-6">
       <img src="/images/iconsettings.png" alt="Settings Icon" class="w-12 h-12 object-cover hover:opacity-80">
     </a>
   </div>

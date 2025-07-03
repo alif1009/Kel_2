@@ -26,7 +26,7 @@
   </a>
 
   <!-- SETTINGS ICON -->
-  <a href="{{ route('settings') }}"
+  <a href="{{ route('settings.panitia') }}"
      class="absolute top-6 right-6 z-50 hover:opacity-80">
     <img src="{{ asset('images/iconsettingsputih.png') }}" alt="Settings" class="w-6 h-6">
   </a>
