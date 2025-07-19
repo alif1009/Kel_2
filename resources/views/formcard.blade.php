@@ -61,9 +61,9 @@
     </form>
   </div>
 
-  <!-- Script JS -->
-  <script>
-    const toggleBtn = document.getElementById('toggleFormBtn');
+    <!-- Script JS -->
+    <script>
+      const toggleBtn = document.getElementById('toggleFormBtn');
     const formCard = document.getElementById('formCard');
     const cancelBtn = document.getElementById('cancelBtn');
 

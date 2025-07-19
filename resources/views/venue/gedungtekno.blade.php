@@ -34,7 +34,7 @@
 <header class="flex justify-between items-center px-6 py-4">
         <h1 class="text-xl font-bold">EventAmaze</h1>
         <nav class="space-x-6 font-semibold flex items-center">
-            <a href="{{ route('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
+            <a href="{{ url('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
 
 
             <!-- Dropdown untuk Tempat -->
@@ -73,9 +73,9 @@
             <!-- Dropdown Menu -->
             <div x-show="open" @click.away="open = false" x-transition
                 class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-                <a href="{{ route('profile.profil') }}"
+                <a href="{{ route('profile.profilPTNbaru') }}"
                     class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                <form method="POST" action="#">
+                <form method="POST" action="/logout">
                     @csrf
                     <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log
                         out</button>
@@ -95,13 +95,13 @@
             <!-- Keterangan Auditorium -->
             <div class="text-white max-w-2xl py-10">
                 <h1 class="text-5xl font-bold mb-4">Gedung Tekno</h1>
-                <p class="mb-1">Polteknik Negeri Batam</p>
-                <p class="mb-4">Batam, Kepulaun 29439</p>
+                <p class="mb-1">Politeknik Negeri Batam</p>
+                <p class="mb-4">Batam, Kepulauan 29439</p>
                 <!-- Tombol -->
                 <div class="flex gap-4">
                     <a href="https://wa.me/+62 822-8782-5959" target="_blank"
                         class="bg-green-600 px-6 py-2 rounded-full text-white hover:bg-green-700 transition">Chat by
-                        Whatsapp</a>
+                        WhatsApp</a>
                 </div>
             </div>
 
@@ -133,7 +133,7 @@
                     <li>Meja</li>
                     <li>Alfatron</li>
                     <li>Kursi</li>
-                    <li>Mic</li>
+                    <li>Sound System (mic dan speaker)</li>
                 </ul>
             </div>
         </div>

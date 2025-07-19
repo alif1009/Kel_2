@@ -29,6 +29,13 @@
                 To keep connected with us please login with your personal information by email address and password
             </p>
 
+            @if(session('error'))
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                <strong class="font-bold">Oops!</strong>
+                <span class="block sm:inline">{{ session('error') }}</span>
+            </div>
+            @endif
+
             <form action="{{ route('login') }}" method="POST" class="flex flex-col space-y-4">
                 @csrf
                 <input type="text" name="username" placeholder="Username"
@@ -55,7 +62,7 @@
                     class="px-4 py-2 rounded border text-black bg-white/15 placeholder-gray-600">
                     <option value="" disabled selected>Pilih Login Sebagai</option>
                     <option value="mahasiswa">Mahasiswa</option>
-                     <option value="panitia">Panitia</option>
+                    <option value="panitia">Panitia</option>
                     <option value="admin">Admin</option>
                 </select>
 
@@ -85,7 +92,7 @@
     <script>
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.querySelector('input[name="password"]');
-        togglePassword.addEventListener('click', function () {
+        togglePassword.addEventListener('click', function() {
             passwordInput.type = passwordInput.type === "password" ? "text" : "password";
         });
     </script>

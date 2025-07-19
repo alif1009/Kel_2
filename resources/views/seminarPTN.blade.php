@@ -18,58 +18,58 @@
 
     <main class="flex-grow">
         <!-- Navbar -->
-<header class="flex justify-between items-center px-6 py-4">
-        <h1 class="text-xl font-bold">EventAmaze</h1>
-        <nav class="space-x-6 font-semibold flex items-center">
-            <a href="{{ route('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
+        <header class="flex justify-between items-center px-6 py-4">
+            <h1 class="text-xl font-bold">EventAmaze</h1>
+            <nav class="space-x-6 font-semibold flex items-center">
+                <a href="{{ url('berandaPTN') }}" class="hover:underline">Layanan Kami</a>
 
 
-            <!-- Dropdown untuk Tempat -->
-            <div x-data="{ open: false }" class="relative inline-block text-left">
-                <button @click="open = !open" class="hover:underline flex items-center space-x-1">
-                    <span>Tempat</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
-                <div x-show="open" @click.away="open = false" x-transition
-                    class="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                    <div class="py-1 text-black">
-                        <a href="{{ route('venue.gedungtekno') }}"
-                            class="block px-4 py-2 text-sm hover:bg-gray-100">Gedung Tekno</a>
-                        <a href="{{ route('venue.auditorium') }}"
-                            class="block px-4 py-2 text-sm hover:bg-gray-100">Auditorium</a>
+                <!-- Dropdown untuk Tempat -->
+                <div x-data="{ open: false }" class="relative inline-block text-left">
+                    <button @click="open = !open" class="hover:underline flex items-center space-x-1">
+                        <span>Tempat</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="open" @click.away="open = false" x-transition
+                        class="absolute mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                        <div class="py-1 text-black">
+                            <a href="{{ route('venue.gedungtekno') }}"
+                                class="block px-4 py-2 text-sm hover:bg-gray-100">Gedung Tekno</a>
+                            <a href="{{ route('venue.auditorium') }}"
+                                class="block px-4 py-2 text-sm hover:bg-gray-100">Auditorium</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <a href="{{ route('seminarPTN') }}" class="hover:underline">Seminar</a>
-        </nav>
+                <a href="{{ route('seminarPTN') }}" class="hover:underline">Seminar</a>
+            </nav>
 
-        <div x-data="{ open: false }" class="relative">
-            <button @click="open = !open"
-                class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Profile(Panitia)</span>
-            </button>
-            <!-- Dropdown Menu -->
-            <div x-show="open" @click.away="open = false" x-transition
-                class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-                <a href="{{ route('profile.profilPTNbaru') }}"
-                    class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                <form method="POST" action="#">
-                    @csrf
-                    <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log
-                        out</button>
-                </form>
+            <div x-data="{ open: false }" class="relative">
+                <button @click="open = !open"
+                    class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M5.121 17.804A11.966 11.966 0 0012 20c2.21 0 4.28-.595 6.032-1.62a6.5 6.5 0 10-11.758 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>Profile(Panitia)</span>
+                </button>
+                <!-- Dropdown Menu -->
+                <div x-show="open" @click.away="open = false" x-transition
+                    class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
+                    <a href="{{ route('profile.profilPTNbaru') }}"
+                        class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log
+                            out</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
         <!-- Data Panitia -->
         <section class="mt-32 px-6 max-w-6xl mx-auto">
@@ -83,65 +83,26 @@
                             <th class="border px-6 py-4 font-medium">No. HP</th>
                             <th class="border px-6 py-4 font-medium">Email</th>
                             <th class="border px-6 py-4 font-medium">Jurusan</th>
+                            <th class="border px-6 py-4 font-medium">Kategori Seminar</th>
                             <th class="border px-6 py-4 font-medium">Seminar Yang Di ikuti</th>
                             <th class="border px-6 py-4 font-medium">KTM</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($data as $index => $item)
                         <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">1.</td>
-                            <td class="border px-6 py-4">Gilly Viantino</td>
-                            <td class="border px-6 py-4">08123456789</td>
-                            <td class="border px-6 py-4">gillyganteng@gmail.com</td>
-                            <td class="border px-6 py-4">Teknik Informatika</td>
-                            <td class="border px-6 py-4">Penitngnya menjaga kesehatan</td>
-                            <td class="border px-6 py-4">Foto KTM</td>
+                            <td class="border px-6 py-4 text-2xl font-bold">{{ $index + 1 }}.</td>
+                            <td class="border px-6 py-4">{{ $item->nama }}</td>
+                            <td class="border px-6 py-4">{{ $item->hp }}</td>
+                            <td class="border px-6 py-4">{{ $item->email }}</td>
+                            <td class="border px-6 py-4">{{ $item->jurusan }}</td>
+                            <td class="border px-6 py-4">{{ $item->seminar->kategori }}</td>
+                            <td class="border px-6 py-4">{{ $item->seminar->judul ?? '-' }}</td>
+                            <td class="border px-6 py-4">
+                                <a href="{{ asset($item->ktm) }}" target="_blank" class="underline">Lihat KTM</a>
+                            </td>
                         </tr>
-                        <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">2.</td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                        </tr>
-                        <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">2.</td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                        </tr>
-                        <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">3.</td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                        </tr>
-                        <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">4.</td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                        </tr>
-                        <tr class="bg-gradient-to-r from-blue-900 via-black to-green-900">
-                            <td class="border px-6 py-4 text-2xl font-bold">5.</td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                            <td class="border px-6 py-4"></td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -153,8 +114,8 @@
         <h3 class="text-lg font-bold mb-2">EventAmaze</h3>
         <div class="flex justify-center space-x-4 mb-2">
             <a href="https://www.instagram.com/ramdhani_.02/"><img src="https://img.icons8.com/ios-filled/25/ffffff/instagram-new.png" /></a>
-           <a href="https://wa.me/6287730217133"target="_blank"rel="noopener noreferrer">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"alt="WhatsApp" class="w-6 h-6"></a>
+            <a href="https://wa.me/6287730217133" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="w-6 h-6"></a>
         </div>
         <p class="text-sm">&copy; 2025 Your Website. All rights reserved. |
             <a href="#" class="underline">Privacy Policy</a> |

@@ -8,204 +8,137 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex min-h-screen bg-gray-100 font-sans">
+<body x-data="{ dropdownOpen: false, modalOpen: null }"
+      :class="{ 'overflow-hidden': modalOpen !== null }"
+      class="flex min-h-screen bg-gray-100 font-sans">
+
   <!-- Sidebar -->
   <aside class="w-64 bg-[#0b3558] text-white flex flex-col">
     <div class="text-2xl font-semibold p-5 border-b border-white">EventAmaze</div>
     <nav class="flex-1 px-2 py-4 space-y-2">
-      <a href="{{ url('dashboardcard') }}"
-        class="flex items-center gap-3 px-4 py-2 bg-[#f5c16c] text-black rounded-r-full font-semibold">
+      <a href="{{ url('dashboardcard') }}" class="flex items-center gap-3 px-4 py-2 bg-[#f5c16c] text-black rounded-r-full font-semibold">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/home.png" alt="icon" class="w-6 h-6" />
         Dashboard
       </a>
-      <a href="{{ url('konfirmasiacara') }}"
-        class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
+      <a href="{{ url('konfirmasiacara') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/to-do.png" class="w-6 h-6" alt="icon" />
         Konfirmasi Acara
       </a>
-      <!-- <a href="{{ url('konfirmasiPTN') }}"
-        class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
-        <img src="https://img.icons8.com/ios-filled/24/ffffff/to-do.png" class="w-6 h-6" alt="icon" />
-        Konfirmasi Pantia
-      </a>-->
-      <a href="{{ url('seminarselesai') }}"
-        class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
+      <a href="{{ url('seminarselesai') }}" class="flex items-center gap-3 px-4 py-2 hover:bg-white hover:text-[#0b3558] rounded-r-full transition">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/checked.png" class="w-6 h-6" alt="icon" />
         Seminar Selesai
       </a>
     </nav>
   </aside>
 
+  <!-- Dropdown Profil -->
+  <div class="absolute top-0 right-0 p-6 z-[9999]">
+    <div @click.stop="dropdownOpen = !dropdownOpen"
+         class="cursor-pointer flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow hover:bg-gray-100">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/user.png" class="w-6 h-6" alt="User" />
+      <span class="font-semibold text-sm">Admin</span>
+      <svg :class="{ 'rotate-180': dropdownOpen }" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+    <div x-show="dropdownOpen" x-cloak @click.outside="dropdownOpen = false" @click.stop
+         class="mt-2 w-48 bg-white rounded-md shadow-lg py-2 absolute right-0 z-[9999]">
+      <a href="{{ route('profile.profilADMbaru') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <main class="flex-1 p-8 relative">
     <h1 class="text-2xl font-bold mb-4">Dashboard Card</h1>
+
+    <!-- Form Tambah -->
     <div x-data="{ openForm: false }" class="relative z-10">
-      <!-- Tombol Tambah -->
-      <button @click="openForm = true" class="mb-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+      <button @click.stop="openForm = true" class="mb-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
         Tambah Card
       </button>
 
-      <!-- Overlay dan Form Modal -->
       <div x-show="openForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" x-cloak>
         <div @click.outside="openForm = false" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-xl mx-auto">
           <h2 class="text-lg font-semibold mb-4">Form Tambah Seminar</h2>
-          <form enctype="multipart/form-data" method="POST" action="#">
-            <!-- CSRF (jika pakai Laravel) -->
+          <form enctype="multipart/form-data" method="POST" action="{{ route('seminaradmin.store') }}">
             @csrf
-
-            <!-- Kategori Seminar -->
             <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Kategori Seminar</label>
-              <input type="text" name="kategori"
-                class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required>
+              <label class="block font-semibold mb-1">Panitia</label>
+              <select name="user_id" required class="w-full border rounded px-3 py-2">
+                @foreach ($panitias as $panitia)
+                <option value="{{ $panitia->id }}">{{ $panitia->name }}</option>
+                @endforeach
+              </select>
             </div>
-
-            <!-- Judul Seminar -->
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Judul Seminar</label>
-              <input type="text" name="judul"
-                class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required>
-            </div>
-
-          <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Deskripsi</label>
-              <input type="text" name="Deskripsi"
-                class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required>
-            </div>
-
-            <!-- Tanggal Acara -->
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Tanggal Acara</label>
-              <input type="date" name="tanggal"
-                class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required>
-            </div>
-
-            <!-- Waktu -->
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Waktu</label>
-              <input type="time" name="waktu"
-                class="mt-1 block w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required>
-            </div>
-
-            <!-- Poster -->
-            <div class="mb-4">
-              <label class="block text-sm font-medium text-gray-700">Poster</label>
-              <input type="file" name="poster" accept="image/*"
-                class="mt-1 block w-full text-sm border rounded px-3 py-2" required>
-            </div>
-
-            <!-- Tombol Aksi -->
-            <div class="flex gap-4 justify-end mt-6">
+            <div class="mb-4"><label class="block text-sm font-medium">Kategori Seminar</label><input type="text" name="kategori" class="w-full border rounded px-3 py-2" required></div>
+            <div class="mb-4"><label class="block text-sm font-medium">Judul Seminar</label><input type="text" name="judul" class="w-full border rounded px-3 py-2" required></div>
+            <div class="mb-4"><label class="block text-sm font-medium">Deskripsi</label><input type="text" name="deskripsi" class="w-full border rounded px-3 py-2" required></div>
+            <div class="mb-4"><label class="block text-sm font-medium">Tanggal Acara</label><input type="date" name="tanggal" class="w-full border rounded px-3 py-2" required></div>
+            <div class="mb-4"><label class="block text-sm font-medium">Waktu</label><input type="time" name="waktu" class="w-full border rounded px-3 py-2" required></div>
+            <div class="mb-4"><label class="block text-sm font-medium">Poster</label><input type="file" name="poster" accept="image/*" class="w-full text-sm border rounded px-3 py-2" required></div>
+            <div class="flex justify-end gap-4 mt-6">
               <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Tambah</button>
-              <button type="button" @click="openForm = false"
-                class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Batal</button>
+              <button type="button" @click="openForm = false" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Batal</button>
             </div>
           </form>
         </div>
       </div>
     </div>
 
-
+    <!-- Tabel -->
     <div class="bg-gray-300 p-4 rounded shadow">
       <table class="w-full table-auto border-collapse border border-black text-center">
         <thead class="bg-gray-400">
           <tr>
-            <th class="border border-black px-2 py-2">No</th>
-            <th class="border border-black px-2 py-2">Kategori Seminar</th>
-            <th class="border border-black px-2 py-2">Judul Seminar</th>
-            <th class="border border-black px-2 py-2">Tanggal Acara</th>
-            <th class="border border-black px-2 py-2">Waktu</th>
-            <th class="border border-black px-2 py-2">Poster</th>
-            <th class="border border-black px-2 py-2">Aksi</th>
+            <th class="border px-2 py-2">No</th>
+            <th class="border px-2 py-2">Kategori Seminar</th>
+            <th class="border px-2 py-2">Judul Seminar</th>
+            <th class="border px-2 py-2">Tanggal Acara</th>
+            <th class="border px-2 py-2">Waktu</th>
+            <th class="border px-2 py-2">Poster</th>
+            <th class="border px-2 py-2">Aksi</th>
           </tr>
         </thead>
         <tbody class="bg-white">
+          @foreach($seminars as $index => $seminar)
           <tr class="h-16">
-            <td class="border border-black font-bold text-xl">1.</td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black">
+            <td class="border font-bold text-xl">{{ $index + 1 }}</td>
+            <td class="border">{{ $seminar->kategori }}</td>
+            <td class="border">{{ $seminar->judul }}</td>
+            <td class="border">{{ $seminar->tanggal }}</td>
+            <td class="border">{{ $seminar->waktu }}</td>
+            <td class="border"><img src="{{ asset($seminar->poster) }}" alt="Poster" class="w-16 mx-auto"></td>
+            <td class="border">
               <div class="flex justify-center gap-2">
-                <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm">Delete</button>
-                <div x-data="{ openModal:false }" x-cloak>
-                  <!-- Tombol Ubah -->
-                  <button @click="openModal = true"
-                    class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">
-                    Ubah
-                  </button>
-                  <!-- ===== Modal overlay ===== -->
-                  <div x-show="openModal" x-transition.opacity
-                    class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-                    <div @click.away="openModal = false" x-transition.scale
-                      class="bg-white w-full max-w-lg rounded-lg p-6 shadow-xl relative">
-                      <button @click="openModal = false"
-                        class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl leading-none">
-                        &times;
-                      </button>
-                      @include('updatecard') {{-- file resources/views/updatecard.blade.php --}}
+                <form action="{{ route('seminaradmin.destroy', $seminar->id) }}" method="POST">
+                  @csrf @method('DELETE')
+                  <button class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 text-sm">Delete</button>
+                </form>
+                <div>
+                  <button @click.stop="modalOpen = {{ $seminar->id }}"
+                          class="bg-green-400 text-white px-3 py-1 rounded-full hover:bg-green-500 text-sm">Ubah</button>
+                  <div x-show="modalOpen === {{ $seminar->id }}" x-cloak x-transition.opacity
+                       @click.self="modalOpen = null"
+                       class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                    <div @click.outside="modalOpen = null" @click.stop
+                         class="bg-white w-full max-w-lg rounded-lg p-6 shadow-xl relative">
+                      <button @click="modalOpen = null"
+                              class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+                      @include('updatecard', ['seminar' => $seminar])
                     </div>
                   </div>
                 </div>
               </div>
             </td>
           </tr>
-          <tr class="h-16">
-            <td class="border border-black font-bold text-xl"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black">
-            </td>
-          </tr>
-
-          <!-- Baris Kosong -->
-          @for($i = 0; $i < 5; $i++)
-        <tr class="h-16">
-        <td class="border border-black">&nbsp;</td>
-        <td class="border border-black"></td>
-        <td class="border border-black"></td>
-        <td class="border border-black"></td>
-        <td class="border border-black"></td>
-        <td class="border border-black"></td>
-        <td class="border border-black"></td>
-        </tr>
-      @endfor
+          @endforeach
         </tbody>
       </table>
     </div>
-    <!-- Topbar -->
-    <div class="absolute top-0 right-0 p-6" x-data="{ open: false }">
-      <div @click="open = !open"
-        class="cursor-pointer flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow hover:bg-gray-100">
-        <img src="https://img.icons8.com/ios-glyphs/30/000000/user.png" class="w-6 h-6" alt="User" />
-        <span class="font-semibold text-sm">Admin</span>
-        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
-
-  <!-- Dropdown -->
-  <div x-show="open" @click.away="open = false" class="mt-2 w-48 bg-white rounded-md shadow-lg py-2 absolute right-0 z-10">
-    <a href="{{ route('profile.profilADMbaru') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profil</a>
-    <form method="POST" action="#">
-      @csrf
-      <button type="submit" class="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</button>
-    </form>
-  </div>
-</div>
-
   </main>
 </body>
 

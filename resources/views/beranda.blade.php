@@ -61,13 +61,12 @@
         <!-- Tombol Register dan Login di kanan -->
         <div class="flex-1 flex justify-end space-x-4">
             <!-- Search Bar -->
-            <form action="#" method="GET" class="relative">
-                <input type="text" name="query" placeholder="Search...."
+            <form action="{{ route('seminar.search') }}" method="GET" class="relative">
+                <input type="text" name="query" placeholder="Cari seminar..."
                     class="border border-gray-300 rounded-lg py-1 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-                <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">
-                    🔍
-                </button>
+                <button type="submit" class="absolute right-2 top-1.5 text-gray-500 hover:text-blue-500">🔍</button>
             </form>
+
             <div x-data="{ open: false }" class="relative">
                 <button @click="open = !open"
                     class="flex items-center space-x-2 bg-gray-200 text-black rounded-lg px-4 py-1 font-semibold hover:bg-gray-300 focus:outline-none">
@@ -83,7 +82,7 @@
                     class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
                     <a href="{{ route('profile.profilbaru') }}"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
                             class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
@@ -201,50 +200,43 @@
         </div>
 
         <!--  seminar -->
+        @if(isset($query))
+        <div class="text-center mb-6">
+            <p class="text-white text-lg">Hasil pencarian untuk: <strong>{{ $query }}</strong></p>
+
+            @if($seminars->isEmpty())
+            <p class="text-red-300 mt-2">Tidak ada seminar yang cocok.</p>
+            @endif
+
+            <!-- Tombol kembali ke semua seminar -->
+            <a href="{{ route('beranda') }}" class="inline-block mt-4 bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300">
+                Lihat Semua Seminar
+            </a>
+        </div>
+        @endif
+
         <div class="flex justify-center space-x-8">
+
+
             <!-- Card seminar 1 -->
-            <div class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg
-         flex flex-col"> <!-- flex container -->
-                <img src="{{ asset('images/seminar2.jpg') }}" class="h-40 w-full object-cover" />
-                <!-- Bagian isi dibuat flex kolom juga agar tombol bisa diposisikan di bawah -->
+            @foreach ($seminars as $seminar)
+            <div class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg flex flex-col">
+                <img src="{{ asset($seminar->poster) }}" class="h-40 w-full object-cover" />
                 <div class="p-4 flex flex-col h-full">
-                    <h3 class="font-bold mb-2">Seminar Pendidikan</h3>
-
+                    <h3 class="font-bold mb-2">{{ $seminar->judul }}</h3>
                     <p class="text-sm text-gray-500 mb-3">
-                        Narasumber: Dani ganteng<br>
-                        Lokasi: Auditorium<br>
-
+                        Tanggal: {{ $seminar->tanggal }}<br>
+                        Waktu: {{ $seminar->waktu }}<br>
+                        Deskripsi: {{ $seminar->deskripsi }}
                     </p>
-                    <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
-                    <a href="/formpenonton"
+                    <a href="{{ route('form.penonton', $seminar->id) }}"
                         class="mt-auto mx-auto bg-green-500 text-white text-base font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition text-center">
                         Daftar
                     </a>
-
                 </div>
             </div>
+            @endforeach
 
-            <!-- Card seminar 2 -->
-            <div class="bg-white text-black rounded-xl overflow-hidden w-60 shadow-lg
-         flex flex-col"> <!-- flex container -->
-                <img src="{{ asset('images/seminar.jpg') }}" class="h-40 w-full object-cover" />
-                <!-- Bagian isi dibuat flex kolom juga agar tombol bisa diposisikan di bawah -->
-                <div class="p-4 flex flex-col h-full">
-                    <h3 class="font-bold mb-2">Seminar Pendidikan</h3>
-
-                    <p class="text-sm text-gray-500 mb-3">
-                        Narasumber: Dani ganteng<br>
-                        Lokasi: Gedung Tekno<br>
-
-                    </p>
-                    <!-- mt-auto mendorong elemen ini menempel di bagian bawah kartu -->
-                    <a href="/formpenonton"
-                        class="mt-auto mx-auto bg-green-500 text-white text-base font-semibold px-6 py-2 rounded-full hover:bg-green-600 transition text-center">
-                        Daftar
-                    </a>
-
-                </div>
-            </div>
 
         </div>
         </div>
@@ -324,7 +316,7 @@
             rootMargin: "0px 0px -50px 0px"
         };
 
-        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.remove('opacity-0', 'translate-y-5');
@@ -339,4 +331,5 @@
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

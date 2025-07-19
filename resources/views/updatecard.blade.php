@@ -17,7 +17,7 @@
             Form Ubah Card Seminar
         </h1>
 
-        <form action="#" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <form action="{{ route('seminaradmin.update', $seminar->id) }}" method="POST" enctype="multipart/form-data" class="space-y-3">
             @csrf
             @method('PUT') {{-- spoofing HTTP PUT --}}
 
@@ -26,7 +26,7 @@
                 <label for="kategori" class="block text-sm font-medium text-gray-700 mb-1">
                     Kategori Seminar
                 </label>
-                <input id="kategori" name="kategori" type="text" required value="{{ old('kategori') }}" class="w-full rounded-md border border-gray-300 p-3
+                <input id="kategori" name="kategori" type="text" required value="{{ old('kategori', $seminar->kategori) }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500
                               placeholder-gray-400">
             </div>
@@ -36,7 +36,7 @@
                 <label for="judul" class="block text-sm font-medium text-gray-700 mb-1">
                     Judul Seminar
                 </label>
-                <input id="judul" name="judul" type="text" required value="{{ old('judul') }}" class="w-full rounded-md border border-gray-300 p-3
+                <input id="judul" name="judul" type="text" required value="{{ old('judul', $seminar->judul) }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500
                               placeholder-gray-400">
             </div>
@@ -45,7 +45,7 @@
                 <label for="Deskripsi" class="block text-sm font-medium text-gray-700 mb-1">
                     Deskripsi 
                 </label>
-                <input id="Deskripsi" name="Deskripsi" type="text" required value="{{ old('Deskripsi') }}" class="w-full rounded-md border border-gray-300 p-3
+                <input id="deskripsi" name="deskripsi" type="text" required value="{{ old('deskripsi', $seminar->deskripsi) }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500
                               placeholder-gray-400">
             </div>
@@ -55,7 +55,7 @@
                 <label for="tanggal" class="block text-sm font-medium text-gray-700 mb-1">
                     Tanggal Acara
                 </label>
-                <input id="tanggal" name="tanggal" type="date" required value="{{ old('tanggal') }}" class="w-full rounded-md border border-gray-300 p-3
+                <input id="tanggal" name="tanggal" type="date" required value="{{ old('tanggal', $seminar->tanggal) }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500">
             </div>
 
@@ -64,7 +64,7 @@
                 <label for="waktu" class="block text-sm font-medium text-gray-700 mb-1">
                     Waktu
                 </label>
-                <input id="waktu" name="waktu" type="time" required value="{{ old('waktu') }}" class="w-full rounded-md border border-gray-300 p-3
+                <input id="waktu" name="waktu" type="time" required value="{{ old('waktu', $seminar->waktu) }}" class="w-full rounded-md border border-gray-300 p-3
                               focus:ring-2 focus:ring-green-500 focus:border-green-500">
             </div>
 
@@ -84,8 +84,8 @@
             </div>
 
             <!-- Tombol aksi -->
-            <div class="flex justify-end space-x-3 pt-2">
-                <a href="#" @click.prevent="openModal = false"
+            <div class="flex justify-between items-center pt-2">
+                <a href="{{ url()->previous() }}" @click.prevent="openModal = false"
                     class="inline-flex items-center px-6 py-2 rounded-md bg-gray-500 hover:bg-gray-600 text-white">
                     Batal
                 </a>

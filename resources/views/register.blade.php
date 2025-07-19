@@ -34,15 +34,16 @@
                     To keep connected with us please register with your personal information by email address and password
                 </p>
 
-                <form action="#" method="POST" class="flex flex-col space-y-4">
-                    <input type="email" placeholder="Email"
+                <form action="{{ route('register.submit') }}" method="POST" class="flex flex-col space-y-4">
+                    @csrf
+                    <input type="email" name="email" placeholder="Email"
                         class="px-4 py-2 rounded border text-black bg-white/15 placeholder-gray-600" required>
 
-                    <input type="text" placeholder="Username"
+                    <input type="text" name="username" placeholder="Username"
                         class="px-4 py-2 rounded border text-black bg-white/15 placeholder-gray-600" required>
 
                     <div class="relative">
-                        <input type="password" placeholder="Password"
+                        <input type="password" name="password" placeholder="Password"
                             class="w-full px-4 py-2 rounded border text-black pr-10 bg-white/15 placeholder-gray-600"
                             required>
                         <span class="absolute right-3 top-2.5 cursor-pointer" id="toggle-password">
@@ -56,7 +57,7 @@
                     <select name="role" required
                         class="px-4 py-2 rounded border text-black bg-white/15 placeholder-gray-600">
                         <option value="" disabled selected>Pilih Register Sebagai</option>
-                        <option value="customer">Customer (Mahasiswa)</option>
+                        <option value="mahasiswa">Customer (Mahasiswa)</option>
                     </select>
 
                     <button type="submit"

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Orderan Selesai</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="flex min-h-screen bg-gray-100 font-sans">
 
   <!-- Sidebar -->
@@ -43,32 +45,27 @@
             <th class="border border-black px-2 py-2">No</th>
             <th class="border border-black px-2 py-2">Nama Panitia</th>
             <th class="border border-black px-2 py-2">Kategori yg dipilih</th>
-            <th class="border border-black px-2 py-2">Tempat</th>
             <th class="border border-black px-2 py-2">Judul Seminar</th>
+            <th class="border border-black px-2 py-2">Deskripsi</th>
+            <th class="border border-black px-2 py-2">Tanggal</th>
           </tr>
         </thead>
         <tbody class="bg-gray-300">
-          <tr class="h-16">
-            <td class="border border-black font-bold text-xl">1.</td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
+          @foreach ($data as $i => $item)
+          <tr>
+            <td class="border">{{ $i + 1 }}</td>
+            <td class="border">{{ $item->konfirmasiAdmin->acara->user->name ?? '-' }}</td>
+            <td class="border">{{ $item->konfirmasiAdmin->acara->kategori_seminar }}</td>
+            <td class="border">{{ $item->konfirmasiAdmin->acara->judul }}</td>
+            <td class="border">{{ $item->konfirmasiAdmin->acara->deskripsi }}</td>
+            <td class="border">{{ $item->konfirmasiAdmin->acara->tanggal }}</td>
           </tr>
-
+          @endforeach
           <!-- Tambahan baris kosong untuk estetika -->
-          @for ($i = 0; $i < 4; $i++)
-          <tr class="h-16">
-            <td class="border border-black">&nbsp;</td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-            <td class="border border-black"></td>
-          </tr>
-          @endfor
         </tbody>
       </table>
     </div>
   </main>
 </body>
+
 </html>

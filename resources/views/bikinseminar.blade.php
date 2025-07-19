@@ -60,12 +60,12 @@
                 </svg>
                 <span>Profile(Panitia)</span>
             </button>
+            <!-- Dropdown Menu -->
             <div x-show="open" @click.away="open = false" x-transition
                 class="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50">
-                <a href="{{ route('profile.profilPTN') }}"
+                <a href="{{ route('profile.profilPTNbaru') }}"
                     class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Profile Saya</a>
-                <a href="#" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Pengaturan</a>
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit"
                         class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Log out</button>
@@ -79,14 +79,20 @@
         <div class="w-full max-w-2xl bg-gray-200 p-6 rounded shadow text-black">
             <h2 class="text-lg font-bold mb-4">Formulir Panitia</h2>
 
-            <form action="#" method="POST" enctype="multipart/form-data" class="space-y-4">
+            @if(session('success'))
+            <div class="mb-4 p-3 bg-green-200 text-green-800 rounded font-semibold text-center">
+                {{ session('success') }}
+            </div>
+            @endif
+            <form action="{{ route('panitia.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                 @csrf
 
                 <div>
-                    <label class="block font-semibold">Nama Panitia</label>
-                    <input type="text" name="nama_panitia"
-                        class="w-full border border-black rounded-full px-4 py-2" required>
+                    <label class="block font-semibold">Nama Panitia (Akun)</label>
+                    <input type="text" value="{{ Auth::user()->name }}" disabled
+                        class="w-full border border-black rounded-full px-4 py-2 bg-gray-300 text-gray-700">
                 </div>
+
 
                 <div>
                     <label class="block font-semibold">Kategori Seminar</label>
@@ -99,15 +105,15 @@
                         class="w-full border border-black rounded-full px-4 py-2" required>
                 </div>
 
-                 <div>
+                <div>
                     <label class="block font-semibold">Deskripsi</label>
-                    <input type="text" name="Deskripsikan acaramu"
+                    <input type="text" name="deskripsi"
                         class="w-full border border-black rounded-full px-4 py-2" required>
                 </div>
 
                 <div>
                     <label class="block font-semibold">Borang Tempat</label>
-                    <input type="file" name="Borang_tempat"
+                    <input type="file" name="borang_tempat"
                         class="w-full border border-black rounded-full px-4 py-2 bg-gray-300 text-center">
                 </div>
 
@@ -144,6 +150,7 @@
             </form>
         </div>
     </main>
+
 
 </body>
 
