@@ -75,7 +75,7 @@
         <section class="mt-32 px-6 max-w-6xl mx-auto">
             <h3 class="text-3xl font-bold mb-6 text-center text-white">Data Penonton</h3>
             <div class="overflow-x-auto">
-                <table class="w-full border border-white text-white text-left text-lg shadow-lg">
+                <table class="w-full border border-white text-white text-center text-lg shadow-lg">
                     <thead class="bg-gradient-to-r from-blue-900 via-black to-green-900 text-white">
                         <tr>
                             <th class="border px-6 py-4 font-medium">No</th>

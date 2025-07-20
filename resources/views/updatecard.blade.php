@@ -91,7 +91,8 @@
                 </a>
 
                 <button type="submit" class="inline-flex items-center px-6 py-2 rounded-md
-                               bg-green-600 hover:bg-green-700 text-white font-semibold">
+                               bg-green-
+                               600 hover:bg-green-700 text-white font-semibold">
                     Ubah
                 </button>
             </div>
