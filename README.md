@@ -1,4 +1,5 @@
 LINK YT PRESENTASI https://youtu.be/tL0BhJeRLnY?si=AhyufoNCvVf6qawi
+LINK YT TUTORIAL CARA PENGGUNAAN : https://youtu.be/LWGosORKexk
 
 
 
