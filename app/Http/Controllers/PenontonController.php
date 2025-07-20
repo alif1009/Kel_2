@@ -23,7 +23,6 @@ class PenontonController extends Controller
             'jurusan' => 'required',
             'email' => 'required|email',
             'hp' => 'required',
-            'kategori' => 'required|exists:seminar_admin,id',
             'seminar_id' => 'required|exists:seminar_admin,id',
             'ktm' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
@@ -36,11 +35,15 @@ class PenontonController extends Controller
         }
 
         $penonton = Penonton::create($validated);
+        $seminar = SeminarAdmin::findOrFail($validated['seminar_id']);
+        $validated['kategori'] = $seminar->kategori; // Ambil kategori seminar
 
+        
         // Simpan otomatis ke seminar_ptns
         SeminarPTN::create([
             'penonton_id' => $penonton->id,
             'seminar_id' => $validated['seminar_id'],
+            'kategori' => $seminar->kategori, 
         ]);
 
 

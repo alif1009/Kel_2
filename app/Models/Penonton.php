@@ -9,7 +9,7 @@ class Penonton extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama', 'hp', 'email', 'jurusan', 'kategori', 'seminar_id', 'ktm'];
+    protected $fillable = ['nama', 'hp', 'email', 'jurusan', 'seminar_id', 'ktm'];
 
     public function seminar()
     {

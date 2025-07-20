@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('acara', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id'); // Foreign key
-            $table->string('nama_panitia');
             $table->string('kategori_seminar');
             $table->string('judul');
             $table->text('deskripsi');

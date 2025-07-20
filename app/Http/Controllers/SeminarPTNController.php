@@ -22,6 +22,10 @@ class SeminarPTNController extends Controller
             ->with('seminar') // relasi ke seminar_admin
             ->get();
 
+
+ // Debugging line to check the data
+
+
         return view('seminarPTN', compact('data'));
     }
 }
