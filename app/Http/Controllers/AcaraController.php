@@ -101,20 +101,26 @@ class AcaraController extends Controller
         return view('konfirmasiacara', compact('data'));
     }
 
-    public function berandaPanitia()
-    {
-        $userId = auth()->id(); // user panitia saat ini
+   public function berandaPanitia()
+{
+    $userId = auth()->id();
 
-        $notifikasi = KonfirmasiAdmin::with(['acara' => function ($query) use ($userId) {
-            $query->where('user_id', $userId);
-        }])
-            ->whereHas('acara', function ($query) use ($userId) {
-                $query->where('user_id', $userId);
-            })
-            ->latest()
-            ->take(10)
-            ->get();
+    $notifikasi = KonfirmasiAdmin::with('acara')
+        ->whereHas('acara', fn($q) => $q->where('user_id', $userId))
+        ->latest()
+        ->get();
 
-        return view('berandaPTN', compact('notifikasi'));
-    }
+    $unreadCount = $notifikasi->where('is_read', false)->count();
+
+    return view('berandaPTN', compact('notifikasi', 'unreadCount'));
+}
+
+public function bacaNotifikasi()
+{
+    KonfirmasiAdmin::whereHas('acara', function ($q) {
+        $q->where('user_id', auth()->id());
+    })->where('is_read', false)->update(['is_read' => true]);
+
+    return response()->json(['message' => 'Semua notifikasi ditandai telah dibaca']);
+}
 }

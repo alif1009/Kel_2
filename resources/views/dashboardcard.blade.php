@@ -14,7 +14,9 @@
 
   <!-- Sidebar -->
   <aside class="w-64 bg-[#0b3558] text-white flex flex-col">
-    <div class="text-2xl font-semibold p-5 border-b border-white">EventAmaze</div>
+  <div class="flex items-center justify-center p-5 border-b border-white">
+    <img src="{{ asset('images/logonegro[1].png') }}" alt="Logo" class="h-10 object-contain">
+</div>
     <nav class="flex-1 px-2 py-4 space-y-2">
       <a href="{{ url('dashboardcard') }}" class="flex items-center gap-3 px-4 py-2 bg-[#f5c16c] text-black rounded-r-full font-semibold">
         <img src="https://img.icons8.com/ios-filled/24/ffffff/home.png" alt="icon" class="w-6 h-6" />

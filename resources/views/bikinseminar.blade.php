@@ -19,7 +19,9 @@
     <!-- Navbar -->
     <header class="w-full flex justify-between items-center px-6 py-4 text-white">
         <!-- Kiri: Logo -->
-        <h1 class="text-xl font-bold">EventAmaze</h1>
+        <a href="/" class="flex items-center h-[60px]">
+    <img src="{{ asset('images/logonegro[1].png') }}" alt="Logo" class="h-full max-h-[60px] object-contain">
+</a>
 
         <!-- Tengah: Navigasi -->
         <nav class="space-x-6 font-semibold flex items-center">

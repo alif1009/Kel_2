@@ -26,7 +26,9 @@
 
         <!-- Logo sebelah kiri -->
         <div class="flex-1">
-            <a href="#home" class="font-bold hover:text-blue-500 text-2xl">EventAmaze</a>
+            <a href="/" class="flex items-center space-x-2 h-[100px]">
+    <img src="{{ asset('images/logonegro[1].png') }}" alt="Logo" class="h-full object-contain max-h-[100px]">
+</a>
         </div>
 
         <!-- Menu navigasi utama di tengah -->

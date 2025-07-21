@@ -295,6 +295,8 @@ Route::get('/beranda', [BerandaController::class, 'index'])->name('beranda');
 
 Route::post('dashboardcard', [SeminarAdminController::class, 'store'])->name('seminaradmin.store');
 
+// Notifikasi
+Route::post('/notifikasi/baca', [AcaraController::class, 'bacaNotifikasi'])->name('notifikasi.baca');
 
 
 
